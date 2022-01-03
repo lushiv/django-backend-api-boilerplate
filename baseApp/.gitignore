@@ -1,0 +1,6 @@
+.vscode/
+*.pyc
+.idea/
+node_apps/node_modules/
+configuration.ini
+temp/
