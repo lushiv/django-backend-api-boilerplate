@@ -82,7 +82,3 @@ class UserStatusList:
         "user_blocked" : "Block User From Platform",
         "no_restrictions" :"Free User From all Bans"
     }
-
-class ProjectionFields:
-    get_investment_plan_list = 'uuid, id, plan_name, minimum_investment, maximum_investment, profit, Instant_withdrawal,capital_security,status, '
-    get_investment_plan_details = 'uuid, id, plan_name, minimum_investment, maximum_investment, profit, Instant_withdrawal,capital_security,status'
