@@ -1,4 +1,4 @@
-from customer_app.views import kyc_status
+from customer_app import views
 import sys
 import datetime
 import jwt
@@ -8,7 +8,6 @@ from common_util import common_util,  custom_exceptions, models, redis_helper, l
 from common_util import email_verification, jwt_operation
 
 from . import ref_string_admin_cms as ref_strings, models as admin_model
-from bitcoin_wallet import ref_strings as bitcoin_wallet_ref_string, btc_util, blockcypher_helper
 
 
 obj_admin = common_util.CommonUtil(log='admin_logs')

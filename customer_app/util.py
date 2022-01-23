@@ -2,8 +2,6 @@ import sys, datetime , jwt, time
 
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
-from app.models import Notification
-from app.serializers import NotificationsModelSerializer
 from common_util import common_util, ref_strings, custom_exceptions, models, redis_helper, logger, redis_helper, encryption
 from . import common_helper, models as custom_model
 from django.core.files.storage import FileSystemStorage 

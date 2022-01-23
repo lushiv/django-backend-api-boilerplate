@@ -3,9 +3,6 @@ from rest_framework import status
 from rest_framework.response import Response
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-from app.models import SupportTicket, KYCManagement, Notification
-from app.serializers import GetSupportTicketModelSerializer, SupportTicketModelSerializer, \
-    KYCManagementModelSerializer, NotificationsModelSerializer
 from customer_app.util import add_notification, get_all_notifications
 from . import util
 import json

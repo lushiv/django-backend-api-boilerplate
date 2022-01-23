@@ -7,9 +7,6 @@ from django.conf import settings
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 import common_util.common_util
-from app.models import SupportTicket, TicketMessage, KYCManagement, Notification
-
-from app.serializers import SupportTicketModelSerializer, GetSupportTicketModelSerializer, TicketMessageModelSerializer,KYCManagementModelSerializer
 from . import util
 from common_util import custom_exceptions, ref_strings, models
 from django.views.decorators.csrf import csrf_exempt
