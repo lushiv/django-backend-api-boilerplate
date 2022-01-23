@@ -21,3 +21,10 @@ Following are instructions on setting up your development environment.
 
 ### 4:- RUN application :
 - RUN :- `python3 manage.py run :-server`
+
+### Backend Coding System:
+- `admin_cms` This dir using for all admins parts api like create admin login and view all of the admin management sytem from this.This is the admin of the app.
+- `app` This is the common app of project.
+- `common_util` This is the common utils helper for the all of the project.
+- `customer_app` This is the main client side app you can change name of this from you project basis .This is the all backend part for the customer side app
+- `server_setup` This is the database configuration and db migration and some other depencdices helper you can run for this sh for setup project on your server.

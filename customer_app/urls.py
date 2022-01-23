@@ -1,0 +1,33 @@
+
+from django.conf.urls import url, include
+from django.contrib import admin
+from django.urls import path
+
+from . import views
+
+urlpatterns = [
+    url(r'^admin/', admin.site.urls),
+
+    url(r'^api/login/', view=views.login, name="login"),
+    url(r'^api/signup/', view=views.signup, name="signup"),
+    url(r'^api/logout/', view=views.logout, name="logout"),
+    url(r'^api/kyc/', view=views.kyc_storage, name="kyc_storage"),
+    url(r'^api/get_kyc/', view=views.get_kyc_data, name="get_kyc"),    
+    url(r'^api/change_password/', view=views.changepassword,name="changepassword"),
+    url(r'^api/enable_2fa/', view=views.enable_2fa, name="enable_2fa"),
+    url(r'^api/verify_otp/', view=views.verify_otp, name="verify_otp"),
+    url(r'^api/disable_2fa/', view=views.disable_2fa, name="disable_2fa"),
+    url(r'^api/multifactor_login/', view=views.multifactor_login, name="multifactor_login"),
+    url(r'^api/get_general_info/', view=views.get_general_info, name="get_general_info"),
+    url(r'^api/contact-us', view=views.contact_us, name="contact_us"),
+
+    # email services
+    url(r'^api/email-verify', view=views.email_verify, name="email_verify"),
+    url(r'^api/forget-password-request', view=views.forget_password_request, name="forget_password_request"),
+    url(r'^api/reset-password', view=views.reset_password, name="reset_password"),
+    url(r'^api/token_validation', view=views.token_validation, name="token_validation"),
+    url(r'^api/resend_email', view=views.resend_email, name="resend_email"),
+
+    #customer notifications
+    url(r'^api/get_customer_notifications', views.get_customer_notifications, name='get_customer_notifications')
+]
