@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="janak" id="72b7f96e-81da-11ec-b393-dbbf843bfa74">
+        <createTable tableName="user_master">
+
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="uuid" type="varchar(36)">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="password" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+                          
+            <column name="username" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="role_id" type="int"/>
+            <column name="timestamp" type="timestamp"/>
+
+            <column name="verified" type="tinyint" defaultValue="1">
+                <constraints nullable="false" />
+             </column>
+
+             <column name="active" type="tinyint" defaultValue="1">
+                <constraints nullable="false" />
+             </column>
+            
+             <column name="status" type="tinyint" defaultValue="1">
+                <constraints nullable="false" />
+             </column>
+
+            <column name="created_by" type="int"/>
+            <column name="created_on" type="DATETIME(6)" defaultValueComputed="NOW(6)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="modified_at" type="DATETIME(6)"/>
+            <column name="modified_by" type="int"/>
+        
+            <column name="deleted_at" type="DATETIME(6)"/>
+            <column name="deleted_by" type="int"/>
+            <column name="deleted" type="tinyint" defaultValue="0"/>
+
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

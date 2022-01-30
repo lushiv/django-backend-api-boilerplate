@@ -1,0 +1,73 @@
+2022-01-30 09:07:01,55 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:07:01,58 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = djjss@gmail.com, password = janaket@gmail.com, username = lushiv, referral_token = 8a47, 
+2022-01-30 09:07:15,29 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:07:15,29 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1146 (42S02): Table 'django_database.user_master' doesn't exist || SELECT * FROM user_master WHERE email = 'djjss@gmail.com'
+2022-01-30 09:07:15,213 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:07:15,213 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1146 (42S02): Table 'django_database.user_master' doesn't exist || SELECT * FROM user_master WHERE referal_token = '8a47' AND deleted = 0
+2022-01-30 09:07:15,214 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:07:15,214 | root | ERROR | <class 'AttributeError'> || util.py || 164 || type object 'Common' has no attribute 'referral_id_not_found'
+2022-01-30 09:07:15,214 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:07:15,214 | root | ERROR | login : <class 'AttributeError'> || views.py || 80 || type object 'Common' has no attribute 'referral_id_not_found'
+2022-01-30 09:07:15,216 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:07:15,216 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'message': 'Internal Server Error', 'request_id': 'd8c65f1b71d247b5b086484592c66196', 'sucess': False, 'status': 500}
+2022-01-30 09:07:15,219 | django.request | ERROR | Internal Server Error: /api/signup/
+2022-01-30 09:12:08,785 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/customer_app/views.py changed, reloading.
+2022-01-30 09:12:34,620 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:12:34,620 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = djjss@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 09:13:30,815 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/customer_app/views.py changed, reloading.
+2022-01-30 09:13:37,988 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:13:37,988 | root | ERROR | login : <class 'TypeError'> || views.py || 79 || signup() missing 1 required positional argument: 'referral_token'
+2022-01-30 09:13:37,990 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:13:37,990 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'message': 'Internal Server Error', 'request_id': 'ff25e1a3dbe44f59ab3dc2e7d9f27bc5', 'sucess': False, 'status': 500}
+2022-01-30 09:13:37,994 | django.request | ERROR | Internal Server Error: /api/signup/
+2022-01-30 09:15:28,979 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:15:28,987 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = djjss@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 09:15:50,636 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:15:50,638 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1146 (42S02): Table 'django_database.user_master' doesn't exist || SELECT * FROM user_master WHERE email = 'djjss@gmail.com'
+2022-01-30 09:16:03,747 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:16:03,748 | root | ERROR | insert_psql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 122 || 1146 (42S02): Table 'django_database.user_master' doesn't exist || insert into user_master (email,password,role_id,uuid,username,kyc_status) Values ('djjss@gmail.com','a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e',1,'4c6e10b1eafa48a8b623ac3371edf404','lushiv',0) 
+2022-01-30 09:16:33,479 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:16:33,479 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'message': 'Internal Server Error', 'request_id': 'e34fe0b4b94f4545b024f5d8ddcfa20b', 'sucess': False, 'status': 500}
+2022-01-30 09:16:33,493 | django.request | ERROR | Internal Server Error: /api/signup/
+2022-01-30 09:19:29,692 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/customer_app/views.py changed, reloading.
+2022-01-30 14:44:32,248 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:44:32,249 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = djjss@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 14:44:39,314 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:44:39,315 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 'djjss@gmail.com'
+2022-01-30 14:46:04,213 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/customer_app/util.py changed, reloading.
+2022-01-30 14:46:54,21 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:46:54,22 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = djjss@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 14:47:05,666 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:47:05,666 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 'djjss@gmail.com'
+2022-01-30 14:47:12,265 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:47:12,265 | root | INFO | >>>>>>>> SQL Insert Success : insert into user_master (email,password,role_id,uuid,username) Values ('djjss@gmail.com','a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e',1,'59dfcaa7206c40c0b476db39cbf2421a','lushiv') 
+2022-01-30 14:47:16,11 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:47:16,11 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1146 (42S02): Table 'django_database.token_verification' doesn't exist || SELECT * FROM token_verification WHERE user_id = '59dfcaa7206c40c0b476db39cbf2421a' AND used = 0 AND event = 'account_verification' AND deleted = 0
+2022-01-30 14:54:39,201 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:54:39,201 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = djjss@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 14:54:48,244 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:54:48,245 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 'djjss@gmail.com'
+2022-01-30 14:54:48,991 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:54:48,991 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'message': 'Email address Exist', 'request_id': 'd3f7d83d8eb644f5bf1dd343ad27b8fe', 'sucess': False, 'status': 500}
+2022-01-30 14:54:48,994 | django.request | ERROR | Internal Server Error: /api/signup/
+2022-01-30 14:55:25,110 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:55:25,110 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = dss@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 14:55:28,335 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:55:28,335 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 'dss@gmail.com'
+2022-01-30 14:55:29,381 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:55:29,382 | root | INFO | >>>>>>>> SQL Insert Success : insert into user_master (email,password,role_id,uuid,username) Values ('dss@gmail.com','a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e',1,'bd166eb4204a4010a84ee7f6671810aa','lushiv') 
+2022-01-30 14:55:30,511 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:55:30,512 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1054 (42S22): Unknown column 'used' in 'where clause' || SELECT * FROM token_verification WHERE user_id = 'bd166eb4204a4010a84ee7f6671810aa' AND used = 0 AND event = 'account_verification' AND deleted = 0
+2022-01-30 14:55:31,258 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:55:31,259 | root | ERROR | insert_psql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 122 || 1054 (42S22): Unknown column 'token' in 'field list' || insert into token_verification (uuid,user_id,token,otp,expiry_time,created_on,event) Values ('81f8f8fdda9940aa90a691fac200c6c2','bd166eb4204a4010a84ee7f6671810aa','b8fa1918d6454704bb9604168a10a384',503828,1643640930,1643554530,'account_verification') 

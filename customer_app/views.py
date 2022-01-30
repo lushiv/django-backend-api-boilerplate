@@ -71,13 +71,12 @@ def signup(request, **kwargs):
             email = post_data.get('email', '')
             password = post_data.get('password', '')
             username = post_data.get('username', '')
-            referral_token = post_data.get('referral_token', '')
 
             # Server Side Checks
             util.obj_common.check_if_present(email, password, username)
 
-            # Login
-            params = util.signup(email, password, username, referral_token)
+            # signup the user
+            params = util.signup(email, password, username)
             params['request_id'] = kwargs['request_id']
             return util.obj_common.success_response(params)
 
@@ -86,7 +85,7 @@ def signup(request, **kwargs):
 
         except Exception as e:
             error = util.common_util.get_error_traceback(sys, e)
-            util.obj_common.logger.error_logger('login : %s' % error)
+            util.obj_common.logger.error_logger('signup : %s' % error)
             return util.obj_common.error_response({'message': ref_strings.Common.bad_request, 'request_id': kwargs.get('request_id')})
 
 

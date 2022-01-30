@@ -139,7 +139,7 @@ def login(email, password):
         raise
 
 
-def signup(email, password, username, referral_token):
+def signup(email, password, username):
     try:
         obj_common.create_logger()
 
@@ -152,16 +152,6 @@ def signup(email, password, username, referral_token):
         if email_exist:
             raise custom_exceptions.UserException(ref_strings.Common.duplicate_login)
 
-        filter_data = {
-            'referal_token' : referral_token,
-            'deleted': 0
-        }
-        
-        # check referal id info from customer table
-        referral_token_info = models.find_sql(obj_common.logger, ref_strings.Tables.user_master, filter_data)
-
-        if not referral_token_info:
-                raise custom_exceptions.UserException(ref_strings.Common.referral_id_not_found)
 
         user_id = common_util.get_uuid()
         insert_data = {
@@ -169,8 +159,7 @@ def signup(email, password, username, referral_token):
             'password' : encryption.get_hash(password),
             'role_id' : ref_strings.RoleId.customer,
             'uuid' : user_id,
-            'username' : username,
-            'kyc_status' : 0
+            'username' : username
         }
 
         db_status = models.insert_sql(
@@ -180,10 +169,6 @@ def signup(email, password, username, referral_token):
         )
         if not db_status:
             raise custom_exceptions.UserException(ref_strings.Common.internal_server_error)
-        
-        # Insert into referrals_mapping table
-        if referral_token:
-            referrals_mapping(user_id,referral_token, referral_token_info[0].get('uuid'))
 
         return create_email_verification(user_id, email, username)
 
@@ -276,7 +261,7 @@ def create_email_verification(user_id, email, name):
             raise custom_exceptions.UserException(ref_strings.Common.unable_to_validate_email)
         link = common_util.config.get('email_service','email_confirmation_link')+ db_data.get('token')
 
-        send_signup_email(email, name , link)
+        # send_signup_email(email, name , link)
         return {}
 
     except custom_exceptions.UserException:
