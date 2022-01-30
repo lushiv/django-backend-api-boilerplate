@@ -182,35 +182,6 @@ def signup(email, password, username):
         raise
 
 
-def referrals_mapping(user_id,referral_token, referal_owner_id):
-    try:
-        obj_common.create_logger()
-
-        insert_data = {
-            'uuid' : common_util.get_uuid(),
-            'user_id' : user_id,
-            'referal_token' : referral_token,
-            'referal_owner_id' : referal_owner_id
-
-        }
-
-        db_status = models.insert_sql(
-            obj_common.logger,
-            ref_strings.Tables.referrals_map,
-            insert_data
-        )
-        
-        if not db_status:
-            raise custom_exceptions.UserException(ref_strings.Common.internal_server_error)
-        
-        return db_status
-    except custom_exceptions.UserException:
-        raise
-    except Exception as e:
-        error = common_util.get_error_traceback(sys, e)
-        obj_common.logger.error_logger(error)
-        raise
-    
 
 def create_email_verification(user_id, email, name):
     try:
@@ -249,7 +220,6 @@ def create_email_verification(user_id, email, name):
             'token' : common_util.get_uuid(),
             'otp' : common_util.generate_otp(int(common_util.config.get('common_settings','otp_len'))) ,
             'expiry_time' : common_util.get_unix_time() + int(common_util.config.get('common_settings','token_expiry_time_hr'))* 60 * 60,
-            'created_on' : common_util.get_unix_time(),
             'event': ref_strings.TokenValidationRefString.account_verification
         }
         db_status = models.insert_sql(
@@ -259,9 +229,11 @@ def create_email_verification(user_id, email, name):
         )
         if not db_status:
             raise custom_exceptions.UserException(ref_strings.Common.unable_to_validate_email)
-        link = common_util.config.get('email_service','email_confirmation_link')+ db_data.get('token')
+
+        # link = common_util.config.get('email_service','email_confirmation_link')+ db_data.get('token')
 
         # send_signup_email(email, name , link)
+        # return {}
         return {}
 
     except custom_exceptions.UserException:
@@ -295,7 +267,7 @@ def send_signup_email(email, name, link):
             },
             "replyTo": {
                 "email": common_util.config.get('email_service','replyEmail'),
-                "name": "BTC wallet Admin"
+                "name": ""
             }
         }
         headers = {
@@ -613,104 +585,6 @@ def changepw(email, oldpassword, newpassword):
         raise
 
 
-def save_kyc_file(email, fileObj):
-    try:
-
-        template = fileObj
-        if template: 
-            location = common_util.get_config().get('kyc_file', 'path')
-            fs = FileSystemStorage(location=location)
-            filename = email+ "_" + datetime.datetime.now().strftime("%Y_%m_%d_%H_%m") + "_" + template.name 
-            filename = fs.save(filename,template) 
-            uploaded_file_url = fs.url(filename)
-            return location+uploaded_file_url
-
-    except custom_exceptions.UserException:
-        raise custom_exceptions.UserException(ref_strings.Common.kyc_file_storage_error)
-
-    except Exception as e:
-        error = common_util.get_error_traceback(sys, e)
-        obj_common.logger.error_logger('save_kyc_file %s' %error)
-        raise
-
-
-def set_kyc(kyc_data, kyc_file_obj):
-    try:
-        obj_common.create_logger()
-
-        check_user_exist = models.find_sql(
-            logger= obj_common.logger,
-            table_name= ref_strings.Tables.user_master,
-            filters={
-                'email' : kyc_data.get("email"),
-                'deleted' : 0
-            }
-        )
-        if not check_user_exist: 
-            raise custom_exceptions.UserException(ref_strings.Common.user_not_found)
-
-        exist_check = models.selectIFexist(
-                logger = obj_common.logger,
-                table_name = ref_strings.Tables.kycinfo,
-                column = kyc_data.get("email")
-            )
-        if exist_check:
-            raise custom_exceptions.UserException(ref_strings.Common.kyc_already_done)
-
-        file_url = save_kyc_file(kyc_data.get('email'), kyc_file_obj)
-
-        kyc_data['url'] = file_url
-
-
-        db_status = models.insert_sql(
-            logger = obj_common.logger,
-            table_name = ref_strings.Tables.kycinfo,
-            insert_data = kyc_data
-        )
-
-        if not db_status:
-            raise custom_exceptions.UserException(ref_strings.Common.kyc_storage_error)
-
-        return {
-            'message' : 'Kyc Successfully Updated'
-        }
-
-    except custom_exceptions.UserException:
-        raise 
-    except Exception as e:
-        error = common_util.get_error_traceback(sys, e)
-        obj_common.logger.error_logger('set_kyc %s' %error)
-        raise
-
-
-
-def get_kyc(email):
-    try:
-        obj_common.create_logger()
-        kyc_data = models.find_sql(
-            logger= obj_common.logger,
-            table_name= ref_strings.Tables.kycinfo,
-            filters={
-                'email' : email
-            }
-        )
-
-        return_data = {}
-        if kyc_data:
-            kyc_data = kyc_data[0]
-            return_data = kyc_data
-        
-        return {
-            'kyc_data': return_data
-        }
-
-    except custom_exceptions.UserException:
-        raise 
-    except Exception as e:
-        error = common_util.get_error_traceback(sys, e)
-        obj_common.logger.error_logger('set_kyc %s' %error)
-        raise
-
 
 def email_verification(token):
     try:
@@ -950,129 +824,6 @@ def contact_us(name, email, subject, message):
         raise
 
 
-def upload_kyc_file_bucket(img, aws=False,digital_ocean=False):
-    try:
-        obj_common.create_logger()
-
-        if digital_ocean:
-            aws_secret_key = common_util.config.get('digital_ocean', 'DIGITAL_OCEAN_SECRET_KEY')
-            aws_access_key = common_util.config.get('digital_ocean', 'DIGITAL_OCEAN_ACCESS_KEY')
-            endpoint_url = common_util.config.get('digital_ocean', 'DIGITAL_OCEAN_BUCKET_URL')
-            region_name = common_util.config.get('digital_ocean', 'DIGITAL_OCEAN_S3_REGION')
-            bucket_name = common_util.config.get('digital_ocean', 'DIGITAL_OCEAN_S3_BUCKET_NAME')
-
-            session = boto3.session.Session()
-            
-            client = session.client('s3',
-                                    region_name=region_name,
-                                    endpoint_url=endpoint_url,
-                                    aws_access_key_id=aws_access_key,
-                                    aws_secret_access_key=aws_secret_key
-                                )
-
-            client.put_object(Bucket=bucket_name,
-                            Key=img.name,
-                            Body=img,
-                            ACL='public-read'
-                        )
-                        
-            file_url = 'https://{bucket_name}.{region_name}.digitaloceanspaces.com/{file_name}'.format(
-                bucket_name=bucket_name,
-                region_name=region_name,
-                file_name=img.name)
-            return file_url
-        
-        if aws:
-            session = boto3.Session(
-                aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
-                aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY,
-                region_name=settings.AWS_REGION_S3_BUCKET
-            )
-            s3 = session.resource('s3')
-            s3.Bucket(settings.AWS_S3_BUCKET).put_object(Key=img.name, Body=img, ACL='public-read')
-
-            file_url = 'https://{bucket_name}.s3.{region}.amazonaws.com/{file}'.format(
-                bucket_name=settings.AWS_S3_BUCKET,
-                region=settings.AWS_REGION_S3_BUCKET,
-                file=img.name)
-            return file_url
-
-    except custom_exceptions.UserException:
-        raise 
-    except Exception as e:
-        error = common_util.get_error_traceback(sys, e)
-        obj_common.logger.error_logger('contact us %s' %error)
-        print (error)
-        raise
-
-
-def add_notification(user_id, notification, ticket=None, url=None, event=None, kyc_id=None, username='admin'):
-    try:
-        obj_common.create_logger()
-
-        Notification(user_id=user_id, notification=notification, ticket=ticket,
-                     url=url, event=event, kyc_id=kyc_id, username=username).save()
-    except custom_exceptions.UserException:
-        raise 
-    except Exception as e:
-        error = common_util.get_error_traceback(sys, e)
-        obj_common.logger.error_logger('add_notification %s' %error)
-        print (error)
-        raise
- 
-
-def check_message_is_read(ticket_id, user_id=''):
-    try:
-        obj_common.create_logger()
-
-        notification = Notification.objects.get(ticket=ticket_id, user_id=user_id, is_read=False, is_deleted=False)
-        notification.timestamp = datetime.datetime.now()
-        notification.save()
-        return True
-    except custom_exceptions.UserException:
-        raise 
-    except Exception as e:
-        error = common_util.get_error_traceback(sys, e)
-        obj_common.logger.error_logger('check_message_is_read %s' %error)
-        print (error)
-        return False
-
-
-def get_all_notifications(user_id='', request=None):
-    try:
-        obj_common.create_logger()
-
-        notifications = Notification.objects.filter(user_id=user_id, is_deleted=False)
-        total_unread_count = Notification.objects.filter(user_id=user_id, is_deleted=False, is_read=False).count()
-
-        pagination_data = {}
-        current_page = int(request.query_params.get('currentPage')) if request.query_params.get('currentPage') != '' else 1
-        per_page = int(request.query_params.get('perPage')) if request.query_params.get('perPage') != '' else 10
-        paginator = Paginator(notifications, per_page)
-        try:
-            notifications = paginator.page(current_page)
-        except PageNotAnInteger:
-            notifications = paginator.page(1)
-        except EmptyPage:
-            notifications = paginator.page(paginator.num_pages)
-        pagination_data['current_page'] = current_page
-        pagination_data['per_page'] = per_page
-        pagination_data['total_count'] = paginator.count
-        context = {
-            'notifications': NotificationsModelSerializer(notifications, many=True).data,
-            'pagination_data': pagination_data,
-            'unread_notifications_count': total_unread_count
-        }
-        return context
-    except custom_exceptions.UserException:
-        raise 
-    except Exception as e:
-        error = common_util.get_error_traceback(sys, e)
-        obj_common.logger.error_logger('get_all_notifications %s' %error)
-        print(error)
-        raise 
-
-
 def get_user_info_using_uuid(uuid):
     try:
         obj_common.create_logger()
@@ -1147,204 +898,4 @@ def resend_email(email, event_name):
         error = common_util.get_error_traceback(sys, e)
         obj_common.logger.error_logger('resend_email %s' % error)
         print(error)
-        raise
-
-#@get all investment plans list from  investment_plans table
-def get_investment_plans_list(order_dict, pagination):
-    try:
-        obj_common.create_logger()
-        investment_plan_list, total_count = custom_model.get_investment_plan_list(
-            logger= obj_common.logger,
-            order_dict=order_dict, 
-            pagination=pagination
-        )
-        if not investment_plan_list:
-            return_data = []
-            return {'data' : return_data}
-
-        investment_plan_return_list = []
-        for each_investment_plan_data in investment_plan_list:
-            investment_plan_data = {
-                'plan_name' : each_investment_plan_data.get('plan_name'),
-                'minimum_investment' : each_investment_plan_data.get('minimum_investment'),
-                'maximum_investment' : each_investment_plan_data.get('maximum_investment'),
-                'profit' : each_investment_plan_data.get('profit'),
-                'Instant_withdrawal' : each_investment_plan_data.get('Instant_withdrawal'),
-                'capital_security' : each_investment_plan_data.get('capital_security'),
-                'id' : each_investment_plan_data.get('uuid')
-            }
-            investment_plan_return_list.append(investment_plan_data)
-
-        return_data = {
-            'data' : investment_plan_return_list,
-            'message' : ref_strings.Common.operation_success
-        }
-        return return_data
-    except custom_exceptions.UserException:
-        raise
-
-    except Exception as e:
-        error = common_util.get_error_traceback(sys, e)
-        obj_common.logger.error_logger('get_investment_plans_list%s' %error)
-        raise
-
-#check the plan id
-def check_paln_id_details(plan_uuid):
-    try:
-        obj_common.create_logger()
-        plan_details_check = models.find_sql(
-        logger = obj_common.logger,
-        table_name= ref_strings.Tables.investment_plans, 
-        filters={
-            'uuid' : plan_uuid
-        }
-    )
-        if not plan_details_check:
-                raise custom_exceptions.UserException(ref_strings.Common.plan_id_not_valid)
-
-        plan_id = plan_details_check[0].get('id')
-        return plan_id
-
-    except custom_exceptions.UserException:
-        raise
-
-    except Exception as e:
-        error = common_util.get_error_traceback(sys, e)
-        obj_common.logger.error_logger(error)
-        raise
-
-
-#check the plan id or user
-def check_plan_is_exis(user_id):
-    try:
-        obj_common.create_logger()
-        check_plan_id = custom_model.get_investment_my_plan_details(
-            logger= obj_common.logger,
-            user_id = user_id
-        )
-        if check_plan_id:
-            plan_id =   check_plan_id[0].get('plan_id')
-            return plan_id
-
-        else:
-            return check_plan_id
-    except custom_exceptions.UserException:
-        raise
-
-    except Exception as e:
-        error = common_util.get_error_traceback(sys, e)
-        obj_common.logger.error_logger('check_plan_is_exis%s' %error)
-        raise
-
-#update the plan id on user_master table
-def update_plan_id(user_id,plan_id):
-    try:
-        obj_common.create_logger()
-        db_update = models.update_sql(
-            obj_common.logger, 
-            ref_strings.Tables.user_master, 
-            update_data= {
-                'plan_id': plan_id
-            },
-            condition={
-                'uuid': user_id
-            }
-        )
-        if not db_update:
-            raise custom_exceptions.UserException(ref_strings.Common.operation_failed)
-        
-        return ({
-            "success" : True,
-            "message" : ref_strings.Common.select_plan_success
-        })
-    except custom_exceptions.UserException:
-        raise
-
-    except Exception as e:
-        error = common_util.get_error_traceback(sys, e)
-        obj_common.logger.error_logger(error)
-        raise
-
-
-
-
-#@get_investment_my_plan_details
-def get_investment_my_plan_details(user_id):
-    try:
-        obj_common.create_logger()
-        investment_plan_list = custom_model.get_investment_my_plan_details(
-            logger= obj_common.logger,
-            user_id = user_id
-        )
-        if not investment_plan_list:
-            return_data = []
-            return {'data' : return_data}
-
-        investment_plan_return_list = []
-        for each_investment_plan_data in investment_plan_list:
-            investment_plan_data = {
-                'plan_name' : each_investment_plan_data.get('plan_name'),
-                'minimum_investment' : each_investment_plan_data.get('minimum_investment'),
-                'maximum_investment' : each_investment_plan_data.get('maximum_investment'),
-                'profit' : each_investment_plan_data.get('profit'),
-                'Instant_withdrawal' : each_investment_plan_data.get('Instant_withdrawal'),
-                'capital_security' : each_investment_plan_data.get('capital_security'),
-                'id' : each_investment_plan_data.get('uuid')
-            }
-            investment_plan_return_list.append(investment_plan_data)
-
-        return_data = {
-            'data' : investment_plan_return_list,
-            'message' : ref_strings.Common.operation_success
-        }
-        return return_data
-    except custom_exceptions.UserException:
-        raise
-
-    except Exception as e:
-        error = common_util.get_error_traceback(sys, e)
-        obj_common.logger.error_logger('get_investment_my_plan_details%s' %error)
-        raise
-
-#Generate referral token
-def generate_referral_token(user_id):
-    try:
-        obj_common.create_logger()
-
-        generated_referal_token = user_id[0:5]
-        
-        filter_data = {
-        'uuid': user_id,
-        'referal_token' : generated_referal_token,
-        'deleted': 0
-        }
-
-        check_referral_token = models.find_sql(obj_common.logger, ref_strings.Tables.user_master, filter_data)
-
-        if not check_referral_token:
-            #Update referral token into user_master
-            db_update = models.update_sql(
-            obj_common.logger, 
-            ref_strings.Tables.user_master, 
-            update_data= {
-                'referal_token': generated_referal_token
-            },
-            condition={
-                'uuid': user_id
-            }
-        )
-            if not db_update:
-                raise custom_exceptions.UserException(ref_strings.Common.operation_failed)
-                
-        return ({
-            "success" : True,
-            "message" : ref_strings.Common.operation_success,
-            "referral_token" : generated_referal_token
-        })
-    except custom_exceptions.UserException:
-        raise
-
-    except Exception as e:
-        error = common_util.get_error_traceback(sys, e)
-        obj_common.logger.error_logger(error)
         raise

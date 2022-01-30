@@ -1,0 +1,443 @@
+2022-01-30 09:07:01,55 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:07:01,58 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = djjss@gmail.com, password = janaket@gmail.com, username = lushiv, referral_token = 8a47, 
+2022-01-30 09:07:15,29 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:07:15,29 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1146 (42S02): Table 'django_database.user_master' doesn't exist || SELECT * FROM user_master WHERE email = 'djjss@gmail.com'
+2022-01-30 09:07:15,213 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:07:15,213 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1146 (42S02): Table 'django_database.user_master' doesn't exist || SELECT * FROM user_master WHERE referal_token = '8a47' AND deleted = 0
+2022-01-30 09:07:15,214 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:07:15,214 | root | ERROR | <class 'AttributeError'> || util.py || 164 || type object 'Common' has no attribute 'referral_id_not_found'
+2022-01-30 09:07:15,214 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:07:15,214 | root | ERROR | login : <class 'AttributeError'> || views.py || 80 || type object 'Common' has no attribute 'referral_id_not_found'
+2022-01-30 09:07:15,216 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:07:15,216 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'message': 'Internal Server Error', 'request_id': 'd8c65f1b71d247b5b086484592c66196', 'sucess': False, 'status': 500}
+2022-01-30 09:07:15,219 | django.request | ERROR | Internal Server Error: /api/signup/
+2022-01-30 09:12:08,785 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/customer_app/views.py changed, reloading.
+2022-01-30 09:12:34,620 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:12:34,620 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = djjss@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 09:13:30,815 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/customer_app/views.py changed, reloading.
+2022-01-30 09:13:37,988 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:13:37,988 | root | ERROR | login : <class 'TypeError'> || views.py || 79 || signup() missing 1 required positional argument: 'referral_token'
+2022-01-30 09:13:37,990 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:13:37,990 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'message': 'Internal Server Error', 'request_id': 'ff25e1a3dbe44f59ab3dc2e7d9f27bc5', 'sucess': False, 'status': 500}
+2022-01-30 09:13:37,994 | django.request | ERROR | Internal Server Error: /api/signup/
+2022-01-30 09:15:28,979 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:15:28,987 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = djjss@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 09:15:50,636 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:15:50,638 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1146 (42S02): Table 'django_database.user_master' doesn't exist || SELECT * FROM user_master WHERE email = 'djjss@gmail.com'
+2022-01-30 09:16:03,747 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:16:03,748 | root | ERROR | insert_psql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 122 || 1146 (42S02): Table 'django_database.user_master' doesn't exist || insert into user_master (email,password,role_id,uuid,username,kyc_status) Values ('djjss@gmail.com','a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e',1,'4c6e10b1eafa48a8b623ac3371edf404','lushiv',0) 
+2022-01-30 09:16:33,479 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 09:16:33,479 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'message': 'Internal Server Error', 'request_id': 'e34fe0b4b94f4545b024f5d8ddcfa20b', 'sucess': False, 'status': 500}
+2022-01-30 09:16:33,493 | django.request | ERROR | Internal Server Error: /api/signup/
+2022-01-30 09:19:29,692 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/customer_app/views.py changed, reloading.
+2022-01-30 14:44:32,248 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:44:32,249 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = djjss@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 14:44:39,314 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:44:39,315 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 'djjss@gmail.com'
+2022-01-30 14:46:04,213 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/customer_app/util.py changed, reloading.
+2022-01-30 14:46:54,21 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:46:54,22 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = djjss@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 14:47:05,666 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:47:05,666 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 'djjss@gmail.com'
+2022-01-30 14:47:12,265 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:47:12,265 | root | INFO | >>>>>>>> SQL Insert Success : insert into user_master (email,password,role_id,uuid,username) Values ('djjss@gmail.com','a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e',1,'59dfcaa7206c40c0b476db39cbf2421a','lushiv') 
+2022-01-30 14:47:16,11 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:47:16,11 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1146 (42S02): Table 'django_database.token_verification' doesn't exist || SELECT * FROM token_verification WHERE user_id = '59dfcaa7206c40c0b476db39cbf2421a' AND used = 0 AND event = 'account_verification' AND deleted = 0
+2022-01-30 14:54:39,201 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:54:39,201 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = djjss@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 14:54:48,244 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:54:48,245 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 'djjss@gmail.com'
+2022-01-30 14:54:48,991 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:54:48,991 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'message': 'Email address Exist', 'request_id': 'd3f7d83d8eb644f5bf1dd343ad27b8fe', 'sucess': False, 'status': 500}
+2022-01-30 14:54:48,994 | django.request | ERROR | Internal Server Error: /api/signup/
+2022-01-30 14:55:25,110 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:55:25,110 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = dss@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 14:55:28,335 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:55:28,335 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 'dss@gmail.com'
+2022-01-30 14:55:29,381 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:55:29,382 | root | INFO | >>>>>>>> SQL Insert Success : insert into user_master (email,password,role_id,uuid,username) Values ('dss@gmail.com','a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e',1,'bd166eb4204a4010a84ee7f6671810aa','lushiv') 
+2022-01-30 14:55:30,511 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:55:30,512 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1054 (42S22): Unknown column 'used' in 'where clause' || SELECT * FROM token_verification WHERE user_id = 'bd166eb4204a4010a84ee7f6671810aa' AND used = 0 AND event = 'account_verification' AND deleted = 0
+2022-01-30 14:55:31,258 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 14:55:31,259 | root | ERROR | insert_psql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 122 || 1054 (42S22): Unknown column 'token' in 'field list' || insert into token_verification (uuid,user_id,token,otp,expiry_time,created_on,event) Values ('81f8f8fdda9940aa90a691fac200c6c2','bd166eb4204a4010a84ee7f6671810aa','b8fa1918d6454704bb9604168a10a384',503828,1643640930,1643554530,'account_verification') 
+2022-01-30 16:38:13,402 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:38:13,402 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = dss@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 16:38:37,810 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:38:37,811 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 'dss@gmail.com'
+2022-01-30 16:38:37,814 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:38:37,814 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'message': 'Email address Exist', 'request_id': 'c70e305e7a9d4868b72551ffd8c36c60', 'sucess': False, 'status': 500}
+2022-01-30 16:38:37,819 | django.request | ERROR | Internal Server Error: /api/signup/
+2022-01-30 16:39:06,645 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:39:06,645 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = ds@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 16:39:10,308 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:39:10,308 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 'ds@gmail.com'
+2022-01-30 16:39:10,357 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:39:10,357 | root | INFO | >>>>>>>> SQL Insert Success : insert into user_master (email,password,role_id,uuid,username) Values ('ds@gmail.com','a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e',1,'0bbe138b77c249fe940c4eb268a83e66','lushiv') 
+2022-01-30 16:39:49,602 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:39:49,603 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1054 (42S22): Unknown column 'used' in 'where clause' || SELECT * FROM token_verification WHERE user_id = '0bbe138b77c249fe940c4eb268a83e66' AND used = 0 AND event = 'account_verification' AND deleted = 0
+2022-01-30 16:45:26,461 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:45:26,461 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = ds@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 16:45:29,236 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:45:29,236 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 'ds@gmail.com'
+2022-01-30 16:45:29,272 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:45:29,272 | root | INFO | >>>>>>>> SQL Insert Success : insert into user_master (email,password,role_id,uuid,username) Values ('ds@gmail.com','a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e',1,'3fdf2346dfb149098e72807d8a0e1934','lushiv') 
+2022-01-30 16:45:40,132 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:45:40,132 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1054 (42S22): Unknown column 'used' in 'where clause' || SELECT * FROM token_verification WHERE user_id = '3fdf2346dfb149098e72807d8a0e1934' AND used = 0 AND event = 'account_verification' AND deleted = 0
+2022-01-30 16:45:43,938 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:45:43,938 | root | ERROR | insert_psql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 122 || 1054 (42S22): Unknown column 'created_on' in 'field list' || insert into token_verification (uuid,user_id,token,otp,expiry_time,created_on,event) Values ('025bdd9a9ea6425abf986910f7432cbc','3fdf2346dfb149098e72807d8a0e1934','1aa46409c39f4c65a46e33a442ab2262',440768,1643647541,1643561141,'account_verification') 
+2022-01-30 16:46:02,674 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:46:02,674 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = ds@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 16:46:05,43 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:46:05,43 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 'ds@gmail.com'
+2022-01-30 16:46:05,45 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:46:05,45 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'message': 'Email address Exist', 'request_id': 'b35f398ba55243f388b9f425749d5484', 'sucess': False, 'status': 500}
+2022-01-30 16:46:05,47 | django.request | ERROR | Internal Server Error: /api/signup/
+2022-01-30 16:46:09,371 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:46:09,371 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 16:46:11,654 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:46:11,654 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 's@gmail.com'
+2022-01-30 16:46:11,690 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:46:11,690 | root | INFO | >>>>>>>> SQL Insert Success : insert into user_master (email,password,role_id,uuid,username) Values ('s@gmail.com','a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e',1,'fbdce183f1d3434f9eace1d78530338c','lushiv') 
+2022-01-30 16:46:25,691 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:46:25,692 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1054 (42S22): Unknown column 'used' in 'where clause' || SELECT * FROM token_verification WHERE user_id = 'fbdce183f1d3434f9eace1d78530338c' AND used = 0 AND event = 'account_verification' AND deleted = 0
+2022-01-30 16:49:06,968 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:49:06,968 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 16:49:10,813 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:49:10,814 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 's@gmail.com'
+2022-01-30 16:49:10,831 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:49:10,831 | root | INFO | >>>>>>>> SQL Insert Success : insert into user_master (email,password,role_id,uuid,username) Values ('s@gmail.com','a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e',1,'b9650df37c6744ebb5d47997eb6050dc','lushiv') 
+2022-01-30 16:49:13,642 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:49:13,642 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1054 (42S22): Unknown column 'used' in 'where clause' || SELECT * FROM token_verification WHERE user_id = 'b9650df37c6744ebb5d47997eb6050dc' AND used = 0 AND event = 'account_verification' AND deleted = 0
+2022-01-30 16:49:56,521 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/customer_app/util.py changed, reloading.
+2022-01-30 16:50:06,879 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:50:06,879 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 16:50:09,385 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:50:09,385 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 's@gmail.com'
+2022-01-30 16:50:09,386 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:50:09,387 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'message': 'Email address Exist', 'request_id': '48ccb7ed87d7405991c51acd71caf21a', 'sucess': False, 'status': 500}
+2022-01-30 16:50:09,388 | django.request | ERROR | Internal Server Error: /api/signup/
+2022-01-30 16:50:17,700 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:50:17,701 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = jr@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 16:50:20,433 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:50:20,434 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 'jr@gmail.com'
+2022-01-30 16:50:20,476 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:50:20,476 | root | INFO | >>>>>>>> SQL Insert Success : insert into user_master (email,password,role_id,uuid,username) Values ('jr@gmail.com','a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e',1,'5707341f77914d7e92f8ef10759b6094','lushiv') 
+2022-01-30 16:50:22,336 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:50:22,336 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1054 (42S22): Unknown column 'used' in 'where clause' || SELECT * FROM token_verification WHERE user_id = '5707341f77914d7e92f8ef10759b6094' AND used = 0 AND event = 'account_verification' AND deleted = 0
+2022-01-30 16:50:23,435 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:50:23,435 | root | INFO | >>>>>>>> SQL Insert Success : insert into token_verification (uuid,user_id,token,otp,expiry_time,event) Values ('4ee20d2914c3466a91ad858a8383045d','5707341f77914d7e92f8ef10759b6094','1f47ba5f207d44e1af9ab36b77733419',427832,1643647822,'account_verification') 
+2022-01-30 16:51:01,461 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/customer_app/util.py changed, reloading.
+2022-01-30 16:51:36,93 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:51:36,94 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = jrs@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 16:51:38,405 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:51:38,405 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 'jrs@gmail.com'
+2022-01-30 16:51:38,423 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:51:38,423 | root | INFO | >>>>>>>> SQL Insert Success : insert into user_master (email,password,role_id,uuid,username) Values ('jrs@gmail.com','a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e',1,'c9ccef1581724206b7b2a900a02e41ea','lushiv') 
+2022-01-30 16:51:39,961 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:51:39,962 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1054 (42S22): Unknown column 'used' in 'where clause' || SELECT * FROM token_verification WHERE user_id = 'c9ccef1581724206b7b2a900a02e41ea' AND used = 0 AND event = 'account_verification' AND deleted = 0
+2022-01-30 16:51:40,991 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:51:40,991 | root | INFO | >>>>>>>> SQL Insert Success : insert into token_verification (uuid,user_id,token,otp,expiry_time,event) Values ('f374f8d957884b459116a13aedfcd5ae','c9ccef1581724206b7b2a900a02e41ea','0061f434dfac444a8993991f3359fad9',292422,1643647900,'account_verification') 
+2022-01-30 16:51:43,11 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:51:43,11 | root | ERROR | signup : <class 'TypeError'> || views.py || 80 || 'bool' object does not support item assignment
+2022-01-30 16:51:43,14 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:51:43,14 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'message': 'Internal Server Error', 'request_id': 'aaa670d2e6e64665840d208498ea0bc6', 'sucess': False, 'status': 500}
+2022-01-30 16:51:43,18 | django.request | ERROR | Internal Server Error: /api/signup/
+2022-01-30 16:53:11,31 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/customer_app/util.py changed, reloading.
+2022-01-30 16:53:21,158 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:53:21,158 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = jjjs@gmail.com, password = janaket@gmail.com, username = lushiv, 
+2022-01-30 16:53:24,567 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:53:24,567 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 'jjjs@gmail.com'
+2022-01-30 16:53:24,588 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:53:24,588 | root | INFO | >>>>>>>> SQL Insert Success : insert into user_master (email,password,role_id,uuid,username) Values ('jjjs@gmail.com','a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e',1,'ec7be167e93b4d76897cb118ae6a6b7b','lushiv') 
+2022-01-30 16:53:27,381 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:53:27,381 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1054 (42S22): Unknown column 'used' in 'where clause' || SELECT * FROM token_verification WHERE user_id = 'ec7be167e93b4d76897cb118ae6a6b7b' AND used = 0 AND event = 'account_verification' AND deleted = 0
+2022-01-30 16:53:34,178 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:53:34,178 | root | INFO | >>>>>>>> SQL Insert Success : insert into token_verification (uuid,user_id,token,otp,expiry_time,event) Values ('d2b7df29b46142b8840b0d2ff4ca9673','ec7be167e93b4d76897cb118ae6a6b7b','e6b8705c56124f5c8971eedbccd7903e',597440,1643648013,'account_verification') 
+2022-01-30 16:54:12,786 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:54:12,787 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': '', 'data': {'request_id': '1146e7ed55e04326bb406cb581cd0c85'}}
+2022-01-30 16:54:26,666 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/common_util/common_util.py changed, reloading.
+2022-01-30 16:55:16,71 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:55:16,72 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, password = janaket@gmail.com, 
+2022-01-30 16:55:16,98 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:55:16,98 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 's@gmail.com' AND password = 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e' AND deleted = 0
+2022-01-30 16:55:16,99 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:55:16,99 | root | INFO | Creating session for: user :b9650df37c6744ebb5d47997eb6050dc, full data :{'id': 1, 'uuid': 'b9650df37c6744ebb5d47997eb6050dc', 'email': 's@gmail.com', 'password': 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e', 'username': 'lushiv', 'role_id': 1, 'timestamp': None, 'verified': 1, 'active': 1, 'status': 1, 'created_by': None, 'created_on': datetime.datetime(2022, 1, 30, 22, 34, 10, 819744), 'modified_at': None, 'modified_by': None, 'deleted_at': None, 'deleted_by': None, 'deleted': 0} 
+2022-01-30 16:55:16,110 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:55:16,110 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1146 (42S02): Table 'django_database.role' doesn't exist || SELECT * FROM role WHERE id = 1
+2022-01-30 16:55:16,111 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:55:16,111 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'msg': 'User Role not found', 'request_id': '184dcdc060c84d96a0843e6638b3502d', 'sucess': False, 'status': 400}
+2022-01-30 16:55:16,113 | django.request | WARNING | Bad Request: /api/login/
+2022-01-30 16:59:09,403 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 16:59:09,403 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, password = janaket@gmail.com, 
+2022-01-30 17:01:58,921 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:01:58,921 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, password = janaket@gmail.com, 
+2022-01-30 17:02:06,980 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:02:06,981 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 's@gmail.com' AND password = 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e' AND deleted = 0
+2022-01-30 17:02:42,625 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:02:42,626 | root | INFO | Creating session for: user :b9650df37c6744ebb5d47997eb6050dc, full data :{'id': 1, 'uuid': 'b9650df37c6744ebb5d47997eb6050dc', 'email': 's@gmail.com', 'password': 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e', 'username': 'lushiv', 'role_id': 1, 'timestamp': None, 'verified': 1, 'active': 1, 'status': 1, 'created_by': None, 'created_on': datetime.datetime(2022, 1, 30, 22, 34, 10, 819744), 'modified_at': None, 'modified_by': None, 'deleted_at': None, 'deleted_by': None, 'deleted': 0} 
+2022-01-30 17:19:41,326 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/common_util/ref_strings.py changed, reloading.
+2022-01-30 17:19:57,544 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:19:57,544 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, password = janaket@gmail.com, 
+2022-01-30 17:20:02,215 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:20:02,215 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 's@gmail.com' AND password = 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e' AND deleted = 0
+2022-01-30 17:20:04,295 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:20:04,296 | root | INFO | Creating session for: user :b9650df37c6744ebb5d47997eb6050dc, full data :{'id': 1, 'uuid': 'b9650df37c6744ebb5d47997eb6050dc', 'email': 's@gmail.com', 'password': 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e', 'username': 'lushiv', 'role_id': 1, 'timestamp': None, 'verified': 1, 'active': 1, 'status': 1, 'created_by': None, 'created_on': datetime.datetime(2022, 1, 30, 22, 34, 10, 819744), 'modified_at': None, 'modified_by': None, 'deleted_at': None, 'deleted_by': None, 'deleted': 0} 
+2022-01-30 17:20:06,96 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:20:06,97 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM role WHERE id = 1
+2022-01-30 17:23:02,165 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:23:02,165 | root | ERROR | find_sql : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 102 || 1146 (42S02): Table 'django_database.otp_detail' doesn't exist || SELECT * FROM otp_detail WHERE email = 's@gmail.com' AND otp_status = True
+2022-01-30 17:28:44,733 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:28:44,734 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, password = janaket@gmail.com, 
+2022-01-30 17:28:48,720 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:28:48,721 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 's@gmail.com' AND password = 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e' AND deleted = 0
+2022-01-30 17:28:48,724 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:28:48,724 | root | INFO | Creating session for: user :b9650df37c6744ebb5d47997eb6050dc, full data :{'id': 1, 'uuid': 'b9650df37c6744ebb5d47997eb6050dc', 'email': 's@gmail.com', 'password': 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e', 'username': 'lushiv', 'role_id': 1, 'timestamp': None, 'verified': 1, 'active': 1, 'status': 1, 'created_by': None, 'created_on': datetime.datetime(2022, 1, 30, 22, 34, 10, 819744), 'modified_at': None, 'modified_by': None, 'deleted_at': None, 'deleted_by': None, 'deleted': 0} 
+2022-01-30 17:28:48,735 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:28:48,735 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM role WHERE id = 1
+2022-01-30 17:28:50,619 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:28:50,620 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM otp_detail WHERE email = 's@gmail.com' AND otp_status = True
+2022-01-30 17:29:22,955 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:29:22,956 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': 'Login Sucess', 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjItMDEtMzAgMTc6Mjg6NDguNzM2MzYxIn0.eyJlbWFpbCI6InNAZ21haWwuY29tIiwicm9sZSI6ImN1c3RvbWVyIiwidXNlcl9pZCI6ImI5NjUwZGYzN2M2NzQ0ZWJiNWQ0Nzk5N2ViNjA1MGRjIn0.0v7CM0wxVroyPvvhh7aMe8IBEzXbg5AdY1VuLR1dTLI', 'userInfo': {'email': 's@gmail.com', 'multi_factor_auth_enable': False, 'user_id': 'b9650df37c6744ebb5d47997eb6050dc', 'role': 'customer', 'user_name': 'lushiv'}, 'message': 'Login Sucess', 'request_id': 'cc2135de157e456995e303dbd0ea52ab'}}
+2022-01-30 17:31:29,741 | django.request | WARNING | Not Found: //get_general_info/
+2022-01-30 17:31:32,80 | django.request | WARNING | Not Found: //get_general_info/
+2022-01-30 17:31:49,354 | django.request | WARNING | Not Found: //get_general_info/
+2022-01-30 17:32:06,226 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:32:06,227 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = , 
+2022-01-30 17:32:06,232 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:32:06,232 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'msg': 'Unauthorized user / session expired'}
+2022-01-30 17:32:06,234 | django.request | WARNING | Unauthorized: /api/get_general_info/
+2022-01-30 17:32:24,368 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:32:24,368 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = , 
+2022-01-30 17:32:24,380 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:32:24,380 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'message': 'Input Params Missing', 'request_id': '22f715d4fce44c4bba91173c5d45115a', 'sucess': False, 'status': 400}
+2022-01-30 17:32:24,380 | django.request | WARNING | Bad Request: /api/get_general_info/
+2022-01-30 17:32:37,50 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:32:37,50 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, 
+2022-01-30 17:32:37,66 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:32:37,66 | root | INFO | >>>>>>>> MSQL get_multifactor_login_details Success : SELECT u.email,u.uuid,u.username, r.role  FROM user_master u inner join role r on u.role_id = r.id where u.email = 's@gmail.com'
+2022-01-30 17:32:37,88 | root | ERROR | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:32:37,88 | root | ERROR | get_account_details : <class 'mysql.connector.errors.ProgrammingError'> || models.py || 192 || 1049 (42000): Unknown database 'django_backend' || SELECT 
+                (SELECT 
+                        SUM(balance)
+                    FROM
+                        django_backend.transaction_master
+                    WHERE
+                        email = 's@gmail.com'
+                            AND status = 'Received') AS total_deposit_balance,
+                (SELECT 
+                        SUM(balance)
+                    FROM
+                        django_backend.transaction_master
+                    WHERE
+                        email = 's@gmail.com'
+                            AND status = 'Sent') AS total_withdraw_balance;
+                
+2022-01-30 17:32:37,96 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:32:37,96 | root | INFO | >>>>>>>> MSQL raw query  Success : select * from otp_detail where email = "s@gmail.com" || None
+2022-01-30 17:32:37,97 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:32:37,97 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': '', 'data': {'userInfo': {'email': 's@gmail.com', 'uuid': 'b9650df37c6744ebb5d47997eb6050dc', 'username': 'lushiv', 'role': 'customer', 'multi_factor_auth_enable': False}, 'account_details': {}, 'request_id': 'df61e2f733574f2590f8187bb0175d43'}}
+2022-01-30 17:34:29,658 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:34:29,658 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+
+2022-01-30 17:34:29,661 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:34:29,661 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': '', 'data': {}}
+2022-01-30 17:34:33,915 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:34:33,915 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, 
+2022-01-30 17:34:33,917 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:34:33,917 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'msg': 'Unauthorized user / session expired'}
+2022-01-30 17:34:33,917 | django.request | WARNING | Unauthorized: /api/get_general_info/
+2022-01-30 17:34:45,985 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:34:45,985 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, password = janaket@gmail.com, 
+2022-01-30 17:34:49,462 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:34:49,462 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 's@gmail.com' AND password = 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e' AND deleted = 0
+2022-01-30 17:34:49,463 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:34:49,463 | root | INFO | Creating session for: user :b9650df37c6744ebb5d47997eb6050dc, full data :{'id': 1, 'uuid': 'b9650df37c6744ebb5d47997eb6050dc', 'email': 's@gmail.com', 'password': 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e', 'username': 'lushiv', 'role_id': 1, 'timestamp': None, 'verified': 1, 'active': 1, 'status': 1, 'created_by': None, 'created_on': datetime.datetime(2022, 1, 30, 22, 34, 10, 819744), 'modified_at': None, 'modified_by': None, 'deleted_at': None, 'deleted_by': None, 'deleted': 0} 
+2022-01-30 17:34:49,495 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:34:49,495 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM role WHERE id = 1
+2022-01-30 17:34:50,125 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:34:50,126 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM otp_detail WHERE email = 's@gmail.com' AND otp_status = True
+2022-01-30 17:34:50,727 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:34:50,728 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': 'Login Sucess', 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjItMDEtMzAgMTc6MzQ6NDkuNDk1NTI3In0.eyJlbWFpbCI6InNAZ21haWwuY29tIiwicm9sZSI6ImN1c3RvbWVyIiwidXNlcl9pZCI6ImI5NjUwZGYzN2M2NzQ0ZWJiNWQ0Nzk5N2ViNjA1MGRjIn0.gqV2zcnBEV1Od2UC67UDvlt02wjHCLWgu804cevOboU', 'userInfo': {'email': 's@gmail.com', 'multi_factor_auth_enable': False, 'user_id': 'b9650df37c6744ebb5d47997eb6050dc', 'role': 'customer', 'user_name': 'lushiv'}, 'message': 'Login Sucess', 'request_id': '31ed7da042dd4b08b53bcbc94ec3cced'}}
+2022-01-30 17:34:56,209 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:34:56,209 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, 
+2022-01-30 17:34:56,212 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:34:56,212 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'msg': 'Unauthorized user / session expired'}
+2022-01-30 17:34:56,213 | django.request | WARNING | Unauthorized: /api/get_general_info/
+2022-01-30 17:35:22,102 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/customer_app/urls.py changed, reloading.
+2022-01-30 17:41:25,217 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:41:25,218 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, 
+2022-01-30 17:41:25,230 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:41:25,230 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'msg': 'Unauthorized user / session expired'}
+2022-01-30 17:41:25,232 | django.request | WARNING | Unauthorized: /api/get_general_info/
+2022-01-30 17:41:28,251 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:41:28,252 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, password = janaket@gmail.com, 
+2022-01-30 17:41:40,300 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:41:40,300 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 's@gmail.com' AND password = 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e' AND deleted = 0
+2022-01-30 17:41:40,300 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:41:40,300 | root | INFO | Creating session for: user :b9650df37c6744ebb5d47997eb6050dc, full data :{'id': 1, 'uuid': 'b9650df37c6744ebb5d47997eb6050dc', 'email': 's@gmail.com', 'password': 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e', 'username': 'lushiv', 'role_id': 1, 'timestamp': None, 'verified': 1, 'active': 1, 'status': 1, 'created_by': None, 'created_on': datetime.datetime(2022, 1, 30, 22, 34, 10, 819744), 'modified_at': None, 'modified_by': None, 'deleted_at': None, 'deleted_by': None, 'deleted': 0} 
+2022-01-30 17:41:40,309 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:41:40,309 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM role WHERE id = 1
+2022-01-30 17:41:40,322 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:41:40,322 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM otp_detail WHERE email = 's@gmail.com' AND otp_status = True
+2022-01-30 17:41:40,323 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:41:40,324 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': 'Login Sucess', 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjItMDEtMzAgMTc6NDE6NDAuMzEwMTQ0In0.eyJlbWFpbCI6InNAZ21haWwuY29tIiwicm9sZSI6ImN1c3RvbWVyIiwidXNlcl9pZCI6ImI5NjUwZGYzN2M2NzQ0ZWJiNWQ0Nzk5N2ViNjA1MGRjIn0.NXqGDBvOQrvCe-5didxCACE9uNMV6ZtJmKoSOD6snns', 'userInfo': {'email': 's@gmail.com', 'multi_factor_auth_enable': False, 'user_id': 'b9650df37c6744ebb5d47997eb6050dc', 'role': 'customer', 'user_name': 'lushiv'}, 'message': 'Login Sucess', 'request_id': '733890fe6b194b62b65331208487105c'}}
+2022-01-30 17:41:49,4 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:41:49,4 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+
+2022-01-30 17:41:49,6 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:41:49,6 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': '', 'data': {}}
+2022-01-30 17:43:11,520 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/customer_app/util.py changed, reloading.
+2022-01-30 17:47:07,371 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:47:07,372 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+
+2022-01-30 17:47:07,375 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:47:07,375 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': '', 'data': {}}
+2022-01-30 17:47:08,77 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:47:08,78 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+
+2022-01-30 17:47:08,79 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:47:08,79 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': '', 'data': {}}
+2022-01-30 17:47:10,893 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:47:10,893 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, 
+2022-01-30 17:47:10,895 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:47:10,896 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'msg': 'Unauthorized user / session expired'}
+2022-01-30 17:47:10,896 | django.request | WARNING | Unauthorized: /api/get_general_info/
+2022-01-30 17:47:12,746 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:47:12,746 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, password = janaket@gmail.com, 
+2022-01-30 17:47:12,778 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:47:12,778 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 's@gmail.com' AND password = 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e' AND deleted = 0
+2022-01-30 17:47:12,778 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:47:12,779 | root | INFO | Creating session for: user :b9650df37c6744ebb5d47997eb6050dc, full data :{'id': 1, 'uuid': 'b9650df37c6744ebb5d47997eb6050dc', 'email': 's@gmail.com', 'password': 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e', 'username': 'lushiv', 'role_id': 1, 'timestamp': None, 'verified': 1, 'active': 1, 'status': 1, 'created_by': None, 'created_on': datetime.datetime(2022, 1, 30, 22, 34, 10, 819744), 'modified_at': None, 'modified_by': None, 'deleted_at': None, 'deleted_by': None, 'deleted': 0} 
+2022-01-30 17:47:12,789 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:47:12,789 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM role WHERE id = 1
+2022-01-30 17:47:12,795 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:47:12,795 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM otp_detail WHERE email = 's@gmail.com' AND otp_status = True
+2022-01-30 17:47:12,795 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:47:12,796 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': 'Login Sucess', 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjItMDEtMzAgMTc6NDc6MTIuNzg5NDg0In0.eyJlbWFpbCI6InNAZ21haWwuY29tIiwicm9sZSI6ImN1c3RvbWVyIiwidXNlcl9pZCI6ImI5NjUwZGYzN2M2NzQ0ZWJiNWQ0Nzk5N2ViNjA1MGRjIn0.Pei7yOVH9p9j0UgpHFCJhpZv1Xut9-Js_R3NDIo-CWM', 'userInfo': {'email': 's@gmail.com', 'multi_factor_auth_enable': False, 'user_id': 'b9650df37c6744ebb5d47997eb6050dc', 'role': 'customer', 'user_name': 'lushiv'}, 'message': 'Login Sucess', 'request_id': 'b336e3a06a2943d489e3bf9b08bca0ac'}}
+2022-01-30 17:49:14,330 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:49:14,340 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, password = janaket@gmail.com, 
+2022-01-30 17:49:14,576 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:49:14,577 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 's@gmail.com' AND password = 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e' AND deleted = 0
+2022-01-30 17:49:14,578 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:49:14,579 | root | INFO | Creating session for: user :b9650df37c6744ebb5d47997eb6050dc, full data :{'id': 1, 'uuid': 'b9650df37c6744ebb5d47997eb6050dc', 'email': 's@gmail.com', 'password': 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e', 'username': 'lushiv', 'role_id': 1, 'timestamp': None, 'verified': 1, 'active': 1, 'status': 1, 'created_by': None, 'created_on': datetime.datetime(2022, 1, 30, 22, 34, 10, 819744), 'modified_at': None, 'modified_by': None, 'deleted_at': None, 'deleted_by': None, 'deleted': 0} 
+2022-01-30 17:49:14,595 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:49:14,595 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM role WHERE id = 1
+2022-01-30 17:49:14,621 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:49:14,621 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM otp_detail WHERE email = 's@gmail.com' AND otp_status = True
+2022-01-30 17:49:14,624 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:49:14,624 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': 'Login Sucess', 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjItMDEtMzAgMTc6NDk6MTQuNTk2ODc2In0.eyJlbWFpbCI6InNAZ21haWwuY29tIiwicm9sZSI6ImN1c3RvbWVyIiwidXNlcl9pZCI6ImI5NjUwZGYzN2M2NzQ0ZWJiNWQ0Nzk5N2ViNjA1MGRjIn0.pAeh7O6qH198oIIY5p8eqz_Y0gpXU4gK0nXY8NBYrtk', 'userInfo': {'email': 's@gmail.com', 'multi_factor_auth_enable': False, 'user_id': 'b9650df37c6744ebb5d47997eb6050dc', 'role': 'customer', 'user_name': 'lushiv'}, 'message': 'Login Sucess', 'request_id': '313cc09310e845148c2524229a20ef5b'}}
+2022-01-30 17:49:18,780 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:49:18,781 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+
+2022-01-30 17:49:18,783 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:49:18,784 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': '', 'data': {}}
+2022-01-30 17:49:21,614 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/customer_app/models.py changed, reloading.
+2022-01-30 17:52:47,545 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:52:47,546 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+
+2022-01-30 17:52:47,549 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:52:47,550 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': '', 'data': {}}
+2022-01-30 17:52:51,840 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:52:51,840 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, password = janaket@gmail.com, 
+2022-01-30 17:52:51,878 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:52:51,878 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 's@gmail.com' AND password = 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e' AND deleted = 0
+2022-01-30 17:52:51,879 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:52:51,879 | root | INFO | Creating session for: user :b9650df37c6744ebb5d47997eb6050dc, full data :{'id': 1, 'uuid': 'b9650df37c6744ebb5d47997eb6050dc', 'email': 's@gmail.com', 'password': 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e', 'username': 'lushiv', 'role_id': 1, 'timestamp': None, 'verified': 1, 'active': 1, 'status': 1, 'created_by': None, 'created_on': datetime.datetime(2022, 1, 30, 22, 34, 10, 819744), 'modified_at': None, 'modified_by': None, 'deleted_at': None, 'deleted_by': None, 'deleted': 0} 
+2022-01-30 17:52:51,889 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:52:51,889 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM role WHERE id = 1
+2022-01-30 17:52:51,913 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:52:51,913 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM otp_detail WHERE email = 's@gmail.com' AND otp_status = True
+2022-01-30 17:52:51,913 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 17:52:51,914 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': 'Login Sucess', 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjItMDEtMzAgMTc6NTI6NTEuODg5NjM3In0.eyJlbWFpbCI6InNAZ21haWwuY29tIiwicm9sZSI6ImN1c3RvbWVyIiwidXNlcl9pZCI6ImI5NjUwZGYzN2M2NzQ0ZWJiNWQ0Nzk5N2ViNjA1MGRjIn0.SA_LIpvkBIAmyKmb-dnSIKEhjFkncCw-eAvLOPyNMus', 'userInfo': {'email': 's@gmail.com', 'multi_factor_auth_enable': False, 'user_id': 'b9650df37c6744ebb5d47997eb6050dc', 'role': 'customer', 'user_name': 'lushiv'}, 'message': 'Login Sucess', 'request_id': '6589ed5596b54bfbbb1d2ca0f59ea9a5'}}
+2022-01-30 17:58:10,323 | django.utils.autoreload | INFO | /home/programmer-0/lushiv-git/django-backend-app/customer_app/urls.py changed, reloading.
+2022-01-30 18:08:43,658 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 18:08:43,661 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, password = janaket@gmail.com, 
+2022-01-30 18:08:43,677 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 18:08:43,677 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 's@gmail.com' AND password = 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e' AND deleted = 0
+2022-01-30 18:08:43,677 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 18:08:43,677 | root | INFO | Creating session for: user :b9650df37c6744ebb5d47997eb6050dc, full data :{'id': 1, 'uuid': 'b9650df37c6744ebb5d47997eb6050dc', 'email': 's@gmail.com', 'password': 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e', 'username': 'lushiv', 'role_id': 1, 'timestamp': None, 'verified': 1, 'active': 1, 'status': 1, 'created_by': None, 'created_on': datetime.datetime(2022, 1, 30, 22, 34, 10, 819744), 'modified_at': None, 'modified_by': None, 'deleted_at': None, 'deleted_by': None, 'deleted': 0} 
+2022-01-30 18:08:43,685 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 18:08:43,685 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM role WHERE id = 1
+2022-01-30 18:08:43,706 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 18:08:43,706 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM otp_detail WHERE email = 's@gmail.com' AND otp_status = True
+2022-01-30 18:08:43,707 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 18:08:43,707 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': 'Login Sucess', 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjItMDEtMzAgMTg6MDg6NDMuNjg1NjE3In0.eyJlbWFpbCI6InNAZ21haWwuY29tIiwicm9sZSI6ImN1c3RvbWVyIiwidXNlcl9pZCI6ImI5NjUwZGYzN2M2NzQ0ZWJiNWQ0Nzk5N2ViNjA1MGRjIn0.IDtVfECqWaVhkiDqEahv7cvmnbzqpYwvC4PyE-eDBB4', 'userInfo': {'email': 's@gmail.com', 'multi_factor_auth_enable': False, 'user_id': 'b9650df37c6744ebb5d47997eb6050dc', 'role': 'customer', 'user_name': 'lushiv'}, 'message': 'Login Sucess', 'request_id': '2f0bb0729d9d40d4a9caeae5e47c4082'}}
+2022-01-30 18:08:44,473 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 18:08:44,473 | root | INFO | REQUEST >>>>>>>>>>>>>>>>> 
+email = s@gmail.com, password = janaket@gmail.com, 
+2022-01-30 18:08:44,485 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 18:08:44,485 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM user_master WHERE email = 's@gmail.com' AND password = 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e' AND deleted = 0
+2022-01-30 18:08:44,485 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 18:08:44,485 | root | INFO | Creating session for: user :b9650df37c6744ebb5d47997eb6050dc, full data :{'id': 1, 'uuid': 'b9650df37c6744ebb5d47997eb6050dc', 'email': 's@gmail.com', 'password': 'a488d4e889358327171effb8504c65eef63eb3b9e1f930de5beac9f8f3e1a32e', 'username': 'lushiv', 'role_id': 1, 'timestamp': None, 'verified': 1, 'active': 1, 'status': 1, 'created_by': None, 'created_on': datetime.datetime(2022, 1, 30, 22, 34, 10, 819744), 'modified_at': None, 'modified_by': None, 'deleted_at': None, 'deleted_by': None, 'deleted': 0} 
+2022-01-30 18:08:44,499 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 18:08:44,499 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM role WHERE id = 1
+2022-01-30 18:08:44,510 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 18:08:44,510 | root | INFO | >>>>>>>> MSQL Find Success : SELECT * FROM otp_detail WHERE email = 's@gmail.com' AND otp_status = True
+2022-01-30 18:08:44,510 | root | INFO | ----------------------------------------------------------------------------------------------------
+2022-01-30 18:08:44,510 | root | INFO | RESPONSE >>>>>>>>>>>>>>>>> 
+{'status': 200, 'sucess': True, 'message': 'Login Sucess', 'data': {'token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjItMDEtMzAgMTg6MDg6NDQuNDk5NjcxIn0.eyJlbWFpbCI6InNAZ21haWwuY29tIiwicm9sZSI6ImN1c3RvbWVyIiwidXNlcl9pZCI6ImI5NjUwZGYzN2M2NzQ0ZWJiNWQ0Nzk5N2ViNjA1MGRjIn0.Kw9VnWJ25n1WK5BRGOi7SlP1VSH0F_Z_0qZSA7cnags', 'userInfo': {'email': 's@gmail.com', 'multi_factor_auth_enable': False, 'user_id': 'b9650df37c6744ebb5d47997eb6050dc', 'role': 'customer', 'user_name': 'lushiv'}, 'message': 'Login Sucess', 'request_id': 'cd4d398a1d6f4f038e18baeff0f5fe0c'}}

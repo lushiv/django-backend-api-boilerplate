@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="janak" id="b0124140-81f1-11ec-997b-57d2352f26e6">
+        <createTable tableName="otp_detail">
+
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="otp_secret" type="varchar(100)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="otp_status" type="tinyint" defaultValue="0"/>
+
+            <column name="otp_url" type="varchar(100)">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="timestamp" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

@@ -24,8 +24,5 @@ urlpatterns = [
       
       #admin cms
       url(r'^get_all_admins', view=views.list_all_admins, name="list_all_admins"),
-      url(r'^delete-admin', view=views.delete_admin, name="delete-admin"),
-
-      #get notifications
-      url(r'^get_admin_notifications/', view= views.get_admin_notifications, name='get_admin_notifications')
+      url(r'^delete-admin', view=views.delete_admin, name="delete-admin")
 ]

@@ -237,7 +237,7 @@ class EmailTemplates:
             "params" : params_dict,
             "replyTo": {
                 "email": reply_email,
-                "name": "BTC wallet Admin"
+                "name": ""
             }
         }
         headers = {

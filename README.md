@@ -38,12 +38,12 @@ classpath: ./mysql-connector-java-8.0.19.jar
 
 ## 4:-  Logger Path Setup:
 Dont forgot to ccreate the path for logger.
-- First you need to make `configuration.ini` file using `configuration_example.ini`
+- First you need to make `configuration.ini` file using `configuration_prod.ini`
 - Then check the all configs on that file.
 ```
 [common_logs]
-path = logs/common-logs
-category = common
+path = logs/customer-logs
+category = customer
 
 [admin_logs]
 path = logs/admin-logs

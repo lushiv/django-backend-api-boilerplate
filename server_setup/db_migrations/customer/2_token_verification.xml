@@ -19,11 +19,15 @@
                 <constraints nullable="false" />
             </column>
 
-            <column name="toke" type="varchar(32)">
+            <column name="token" type="varchar(32)">
                 <constraints nullable="false" />
             </column>
                           
             <column name="otp" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="created_on" type="DATETIME(6)" defaultValueComputed="NOW(6)">
                 <constraints nullable="false" />
             </column>
 
