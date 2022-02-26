@@ -13,7 +13,7 @@ def get_unix_time():  # gives time in sec
 def generate_otp_url(email):
     try:
         otp_secret = pyotp.random_base32()
-        qr_code_str = pyotp.TOTP(otp_secret).provisioning_uri(email, issuer_name="B.I.S crypto wallet")
+        qr_code_str = pyotp.TOTP(otp_secret).provisioning_uri(email, issuer_name="Your app")
         return qr_code_str, otp_secret
     except Exception as e:
         raise
@@ -168,7 +168,6 @@ class TokenValidation:
                     'token' : self.generate_token(),
                     'otp' : self.generate_otp(),
                     'expiry_time' : common_util.get_unix_time() + float(common_util.config.get('common_settings','token_expiry_time_hr'))* 60 * 60,
-                    'created_on' : common_util.get_unix_time(),
                     'event': self.event_name
                 }
             )

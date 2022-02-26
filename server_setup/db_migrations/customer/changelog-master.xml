@@ -13,6 +13,9 @@
 
     <include file="customer/5_otp_detail.xml"/>
 
+    <include file="customer/6_contact_us.xml"/>
+
+
 
     
 </databaseChangeLog>

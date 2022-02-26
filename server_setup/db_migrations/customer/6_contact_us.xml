@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet author="janak" id="764db7a8-975b-11ec-8a2d-27e029ee4f0c">
+        <createTable tableName="contact_us">
+
+            <column name="id" type="bigint" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+
+            <column name="uuid" type="varchar(36)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="name" type="varchar(255)">
+            </column>
+
+            <column name="subject" type="varchar(255)">
+            </column>
+
+            <column name="message" type="text">
+            </column>
+
+            <column name="resolved" type="tinyint" defaultValue="0"/>
+
+            <column name="created_by" type="int"/>
+            <column name="created_on" type="DATETIME(6)" defaultValueComputed="NOW(6)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="modified_at" type="DATETIME(6)"/>
+            <column name="modified_by" type="int"/>
+        
+            <column name="deleted_at" type="DATETIME(6)"/>
+            <column name="deleted_by" type="int"/>
+            <column name="deleted" type="tinyint" defaultValue="0"/>
+
+
+
+        </createTable>
+    </changeSet>
+</databaseChangeLog>

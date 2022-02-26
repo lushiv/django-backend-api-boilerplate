@@ -228,36 +228,6 @@ def multifactor_login(request, **kwargs):
 
 
 @csrf_exempt
-@api_view(['POST', 'GET'])
-@util.obj_common.who_is_hitting
-@util.obj_common.validate_request(['customer', 'admin', 'manager'])
-def get_general_info(request, **kwargs):
-    try:
-        if request.method == 'POST':
-            # Create Logger
-            util.obj_common.create_logger()
-
-            post_data = json.loads(request.body)
-            email = post_data.get('email', '')
-            is_admin = post_data.get('is_admin', False)
-
-            util.obj_common.check_if_present(email)
-
-            params = util.get_general_info(email, is_admin)
-
-            params['request_id'] = kwargs['request_id']
-            return util.obj_common.success_response(params)
-
-    except custom_exceptions.UserException as e:
-        return util.obj_common.error_response({'message': str(e), 'request_id': kwargs.get('request_id')}, 400)
-
-    except Exception as e:
-        error = util.common_util.get_error_traceback(sys, e)
-        util.obj_common.logger.error_logger('otp_qrcode : %s' % error)
-        return util.obj_common.error_response({'message': ref_strings.Common.bad_request, 'request_id': kwargs.get('request_id')})
-
-
-@csrf_exempt
 @api_view(['POST'])
 @util.obj_common.who_is_hitting
 @util.obj_common.validate_request(['customer'])

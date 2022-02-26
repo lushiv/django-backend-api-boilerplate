@@ -492,50 +492,6 @@ def multifactor_login(email, otp, is_admin):
         raise
  
 
-def get_general_info(email, is_admin=False):
-    try:
-        account_details = {}
-        obj_common.create_logger()
-        multi_factor_auth_enable = False
-        user_info = custom_model.get_multifactor_login_details(obj_common.logger,  email, is_admin)[0]
-
-        account_data = custom_model.get_account_details(obj_common.logger,  email)
-        if account_data:
-            total_deposit = account_data[0].get('total_deposit_balance')or 0
-            total_withdraw = account_data[0].get('total_withdraw_balance')or 0
-            account_balance = 0
-            total_profit = total_deposit -total_withdraw 
-
-            account_details = {
-                'total_deposit': total_deposit,
-                'total_withdraw': total_withdraw,
-                'account_balance' : account_balance,
-                'total_profit' : total_profit
-
-            }
-
-        otp_details = custom_model.execute_raw_query(obj_common.logger, 'select * from otp_detail where email = "{}"'.format(email) )
-        if otp_details:
-            multi_factor_auth_enable = False if otp_details[0].get('otp_status')== False else True
-
-        user_info.update({
-            'multi_factor_auth_enable': multi_factor_auth_enable
-        })
-
-        return_data = {
-            'userInfo': user_info,
-            'account_details' : account_details
-        }
-
-        return return_data
-    except custom_exceptions.UserException:
-        raise
-
-    except Exception as e:
-        error = common_util.get_error_traceback(sys, e)
-        obj_common.logger.error_logger(error)
-        raise
-
 
 def changetodate(db_year, db_month, db_date):
     return db_year+"-"+db_month+"-"+db_date

@@ -46,7 +46,8 @@ class Tables:
     otp_detail = 'otp_detail'
     token_verification = 'token_verification'
     admin = 'admin'
-    active_status = 'admin_active'
+    active_status = 'admin_active',
+    contact_us = 'contact_us'
 
 
 class RoleId:
