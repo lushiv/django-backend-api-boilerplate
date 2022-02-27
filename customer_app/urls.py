@@ -6,8 +6,7 @@ from . import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-
-
+    
     #1:- Customer Login and Register
     url(r'^api/login/', view=views.login, name="login"),
     url(r'^api/signup/', view=views.signup, name="signup"),
@@ -31,7 +30,7 @@ urlpatterns = [
     #6: Contact us
     url(r'^api/contact-us', view=views.contact_us, name="contact_us"),
 
-    # email services
+    # verify profile services
     url(r'^api/email-verify', view=views.email_verify, name="email_verify"),
     url(r'^api/token_validation', view=views.token_validation, name="token_validation"),
     url(r'^api/resend_email', view=views.resend_email, name="resend_email")

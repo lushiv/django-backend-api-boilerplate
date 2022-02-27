@@ -230,10 +230,9 @@ def create_email_verification(user_id, email, name):
         if not db_status:
             raise custom_exceptions.UserException(ref_strings.Common.unable_to_validate_email)
 
-        # link = common_util.config.get('email_service','email_confirmation_link')+ db_data.get('token')
+        link = common_util.config.get('email_service','email_confirmation_link')+ db_data.get('token')
 
-        # send_signup_email(email, name , link)
-        # return {}
+        send_signup_email(email, name , link)
         return {}
 
     except custom_exceptions.UserException:
