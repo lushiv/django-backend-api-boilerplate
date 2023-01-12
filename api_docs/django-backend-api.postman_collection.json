@@ -1,0 +1,1773 @@
+{
+	"info": {
+		"_postman_id": "29465862-4cd4-48fc-b1e8-506f9e031900",
+		"name": "django-backend-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16255521"
+	},
+	"item": [
+		{
+			"name": "admin",
+			"item": [
+				{
+					"name": "admin cms",
+					"item": [
+						{
+							"name": "create new admin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMjEgMTc6MjU6MzMuMzgyNjcyIn0.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsInVzZXJfaWQiOiJhMzUwNDdiYzQyNGM0ZmIwYWUxZGNkMzQyMjg2ODVlNyJ9.uofMiyQ3V78ePmM4t8hW-YU6XBbXlqy7eOw3BbGmtCA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"new_user_email\" : \"parishilanrayamajhi@gmaila.com\",\n    \"password\" : \"parishilanrayamajhi@gmaila.com\",\n    \"password_confirm\" : \"parishilanrayamajhi@gmaila.com\",\n    \"first_name\" : \"Developer\",\n    \"last_name\" : \"Parin\",\n    \"role\" : \"3\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/cms/new_admin/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"new_admin",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete admin",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDctMjUgMTI6NTg6NDkuNDkxODM0In0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.Ht9660irZjxl2cBcFPGM_juEy4r1kXhRiGOXCYbMrGk"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\" : \"2f4e98f847d0405fa1f5d880794f90c7\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/cms/delete-admin/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"delete-admin",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get all admin",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMTkgMDg6MjI6MTguMTQ4MjIxIn0.eyJlbWFpbCI6ImFkbWluQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsInVzZXJfaWQiOiJhMzUwNDdiYzQyNGM0ZmIwYWUxZGNkMzQyMjg2ODVlNyJ9.NxSxnikXeBYPveRYkT4QfZMTQJ4g_0yIWJzb3JK257g",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/cms/get_all_admins?currentpage=1&perpage=10&email=p&sort=desc&order=created_at",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"get_all_admins"
+									],
+									"query": [
+										{
+											"key": "currentpage",
+											"value": "1"
+										},
+										{
+											"key": "perpage",
+											"value": "10"
+										},
+										{
+											"key": "email",
+											"value": "p"
+										},
+										{
+											"key": "sort",
+											"value": "desc"
+										},
+										{
+											"key": "order",
+											"value": "created_at"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "admin profile settings",
+					"item": [
+						{
+							"name": "passsword change",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMTkgMDg6MDA6NDUuNjMxMzMzIn0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6InN1cGVyYWRtaW4iLCJ1c2VyX2lkIjoiMmY0ZTk4Zjg0N2QwNDA1ZmExZjVkODgwNzk0ZjkwYzcifQ.14RKr_6Tke9aSC6LEmsewrtfOUoGC-aP7m46w7CAfHg"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"old_password\" : \"parishilanrayamajhi@gmail.com\",\n    \"new_password\" : \"Test@1234\",\n    \"confirm_password\" : \"Test@1234\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/cms/change_password/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"change_password",
+										""
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "a031dcc0966e44ee85d79c71095204c",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin email verify",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjAtMTItMDcgMTI6NDU6NTMuMTQ5MDQ4In0.eyJlbWFpbCI6InBhcmluM0BnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VyX2lkIjoiZDc0MjhmOTY2Y2ZhNDU5ZTlmMjgxNmM2MmI5MTM0YzEifQ.w2KOclntGyueBBOC7YBSmGqaPpQMDuT17rgLVI6aj-8"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n}",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/cms/admin-email-verify?token=a031dcc0966e44ee85d79c71095204cd",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"admin-email-verify"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "a031dcc0966e44ee85d79c71095204cd"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "contact us",
+					"item": [
+						{
+							"name": "get contact us",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDktMDggMDg6MDk6MTMuODExMjE2In0.eyJlbWFpbCI6ImxpbmRhYWRraW5zMTIwQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsInVzZXJfaWQiOiI3NjM4ZTE3Y2M5MmY0M2U1OTM2NDg3YzMxNWNhZWMwNSJ9.19hXPq6iYKqkqbjwx7rANZ7XaYqRwNuEq_yMFFDEH90"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/cms/get-contact-us?=1&perpage=10&email=&resolved=&sort=desc&order=resolved",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"get-contact-us"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "1"
+										},
+										{
+											"key": "perpage",
+											"value": "10"
+										},
+										{
+											"key": "email",
+											"value": ""
+										},
+										{
+											"key": "resolved",
+											"value": ""
+										},
+										{
+											"key": "sort",
+											"value": "desc"
+										},
+										{
+											"key": "order",
+											"value": "resolved"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resolve contact us",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDktMDggMDg6MDk6MTMuODExMjE2In0.eyJlbWFpbCI6ImxpbmRhYWRraW5zMTIwQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsInVzZXJfaWQiOiI3NjM4ZTE3Y2M5MmY0M2U1OTM2NDg3YzMxNWNhZWMwNSJ9.19hXPq6iYKqkqbjwx7rANZ7XaYqRwNuEq_yMFFDEH90"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\" : \"19e9245e4ee744b798c5195b6b019ea1\",\n    \"resolved\" : 0\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/cms/contact-us-status-change/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"contact-us-status-change",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete contact us",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDktMDggMDg6MDk6MTMuODExMjE2In0.eyJlbWFpbCI6ImxpbmRhYWRraW5zMTIwQGdtYWlsLmNvbSIsInJvbGUiOiJhZG1pbiIsInVzZXJfaWQiOiI3NjM4ZTE3Y2M5MmY0M2U1OTM2NDg3YzMxNWNhZWMwNSJ9.19hXPq6iYKqkqbjwx7rANZ7XaYqRwNuEq_yMFFDEH90"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\" : \"413d7efaa4284983899a9ffb0ddec9c8\",\n    \"resolved\" : 0\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/cms/contact-us-status-change/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"contact-us-status-change",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "customer_cms",
+					"item": [
+						{
+							"name": "get all customer",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMTkgMDg6MDA6NDUuNjMxMzMzIn0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6InN1cGVyYWRtaW4iLCJ1c2VyX2lkIjoiMmY0ZTk4Zjg0N2QwNDA1ZmExZjVkODgwNzk0ZjkwYzcifQ.14RKr_6Tke9aSC6LEmsewrtfOUoGC-aP7m46w7CAfHg"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"parin3@gmail.com\",\n\t\"password\" : \"parin3@gmail.com\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/cms/get_all_customer?currentpage=1&perpage=10&email=parin4&sort=desc&order=timestamp",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"get_all_customer"
+									],
+									"query": [
+										{
+											"key": "currentpage",
+											"value": "1"
+										},
+										{
+											"key": "perpage",
+											"value": "10"
+										},
+										{
+											"key": "email",
+											"value": "parin4"
+										},
+										{
+											"key": "sort",
+											"value": "desc"
+										},
+										{
+											"key": "order",
+											"value": "timestamp"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "import watch address",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDQtMjUgMDU6NTY6NTguNzU3NjgxIn0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.hjuMVPnkxnTeu28EYWiUqp-NdqBa04WvnQP_ywu2Z60"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"parin4@gmail.com\",\n    \"address\" : \"1P8jfgWtxaAeaywM1MuaNc8B7ujhBjkrAZ\",\n    \"label\" : \"test <<>>\"\n\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/cms/import_watch_address",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"import_watch_address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "admin  : create customer ticket",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDYtMjcgMTE6MDM6NDcuMzg0MDM0In0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.6ooQGeVxrOaJzq0tVugXPBbCPbtYZXyqb46bKsANpXM"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"category\": \"kyc\",\n    \"subject\":  \"asdfasdf\",\n    \"message\": \"admin created \",\n    \"user_id\" : \"efea8cdd693947c49be939c9dd7d2829\"\n\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/cms/create_support_ticket/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"create_support_ticket",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete address",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDQtMjUgMDU6NTY6NTguNzU3NjgxIn0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.hjuMVPnkxnTeu28EYWiUqp-NdqBa04WvnQP_ywu2Z60"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"parin4@gmail.com\",\n    \"address\": \"1P8jfgWtxaAeaywM1MuaNc8B7ujhBjkrAZ\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/cms/import_watch_address",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"import_watch_address"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "disable customer 2fa",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDctMjMgMDc6MzM6NTUuODE3ODA3In0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.j4qe-uUr-QoTnxceF-AnxT8uvwTZYt1Sv7y8HC2zOQI"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"parishilanrayamajhi@gmail.com\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/cms/disable_user_2fa",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"disable_user_2fa"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "view_customer_detail",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDgtMjkgMTU6MTA6NTQuOTIyMzAwIn0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.gfYG45epmN6Kxh8NJw4uC6DK6MlSjiooYlmrrHMAM7s"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"parin3@gmail.com\",\n\t\"password\" : \"parin3@gmail.com\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/cms/get_customer?id=efea8cdd693947c49be939c9dd7d2829",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"get_customer"
+									],
+									"query": [
+										{
+											"key": "id",
+											"value": "efea8cdd693947c49be939c9dd7d2829"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get customer status",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDQtMjUgMDc6MTI6MDUuNzkwNTA4In0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.KTG07EJY6YbACaSjBkEo-NHgVh9r1GHEQXsr8pSkJxg"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": ""
+								},
+								"url": {
+									"raw": "{{base_url}}/cms/customer-status-list/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"customer-status-list",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "customer status change",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDQtMjUgMDc6MTI6MDUuNzkwNTA4In0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.KTG07EJY6YbACaSjBkEo-NHgVh9r1GHEQXsr8pSkJxg"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDQtMjUgMDc6MTI6MDUuNzkwNTA4In0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.KTG07EJY6YbACaSjBkEo-NHgVh9r1GHEQXsr8pSkJxg",
+										"disabled": true
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"uuid\" : \"efea8cdd693947c49be939c9dd7d2829\",\n\t\"status\" : \"crypto_payment_blocked\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/cms/customer-status-change/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"customer-status-change",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "delete customer",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDQtMjUgMDU6NTY6NTguNzU3NjgxIn0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.hjuMVPnkxnTeu28EYWiUqp-NdqBa04WvnQP_ywu2Z60"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"id\" : \"2f4e98f847d0405fa1f5d880794f90c7\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/cms/delete-customer/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"delete-customer",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "support ticket",
+					"item": [
+						{
+							"name": "delete Ticket",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDUtMDQgMTc6NTk6NDAuNjAxNzcwIn0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.pTS-P1muXqHGj1JgqktUo_M2Br5aDqf7xpVW39wxgqM"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"ticket_id\" : \"4099236c17ab48d4908bd36ebdf5afbc\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/admin_support_ticket/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin_support_ticket",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_all_Ticket",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMTEtMTkgMDg6MjE6NTguMDAwNDg0In0.eyJlbWFpbCI6Im1hbmFnZXJAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjQyYzA3NDkzNTlmNDRhZThhZTQzYTYwNTg0MGJiYThjIn0.8RyNAATO21h4m3txT-W0zAyC-AiivR6_p6ee-lMX34M"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"url": {
+									"raw": "{{base_url}}/cms/support_ticket/?status=&email=&id=8eaedb180d7b45989201626fcd46e5d7",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"cms",
+										"support_ticket",
+										""
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": ""
+										},
+										{
+											"key": "email",
+											"value": ""
+										},
+										{
+											"key": "id",
+											"value": "8eaedb180d7b45989201626fcd46e5d7"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "2fa",
+					"item": [
+						{
+							"name": "check if 2fa enabled",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDctMjMgMDc6MzM6NTUuODE3ODA3In0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.j4qe-uUr-QoTnxceF-AnxT8uvwTZYt1Sv7y8HC2zOQI"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"parishilanrayamajhi@gmail.com\",\n    \"is_admin\": true\n }"
+								},
+								"url": {
+									"raw": "{{base_url}}/get_general_info/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"get_general_info",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2fa login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDYtMjcgMTE6MzE6MDkuMzQ0NDQ2In0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.B0RAG7qeKUx_zFT2smHdgnsSuB-cBcRxU0B5pR7UG1g"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"parishilanrayamajhi@gmail.com\",\n    \"otp\" : 357357,\n    \"is_admin\": true\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/multifactor_login/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"multifactor_login",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "enable_2fa",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDctMjMgMDc6MzM6NTUuODE3ODA3In0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.j4qe-uUr-QoTnxceF-AnxT8uvwTZYt1Sv7y8HC2zOQI"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"parishilanrayamajhi@gmail.com\",\n    \"reenable\" : true\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/enable_2fa/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"enable_2fa",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "disable_2fa",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDctMjMgMDc6MzA6MzkuNjc1MzM4In0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.xyKaspV5W7Fjzd1hNnYV3Ur5u6VXzKpBqQV2EkzrE_I"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"parishilanrayamajhi@gmail.com\",\n    \"otp\" : 684471\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/disable_2fa/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"disable_2fa",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify_otp",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDctMjMgMDc6MzM6NTUuODE3ODA3In0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.j4qe-uUr-QoTnxceF-AnxT8uvwTZYt1Sv7y8HC2zOQI"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"parishilanrayamajhi@gmail.com\",\n\t\"otp\" : \"125600\"\n }"
+								},
+								"url": {
+									"raw": "{{base_url}}/verify_otp/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"verify_otp",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "superadmin login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDItMTYgMTY6NDI6MjEuNTA4ODczIn0.eyJlbWFpbCI6ImdveG9tZXA4OTVAd2VkYm8ubmV0Iiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6ImU0MWE0Zjk0ZmUwMTQxMDNiYWJjMjFkY2E3MmE4ZjllIn0.t-P40cD70y4kva7Axtcgj4eBYlanVtm7iuGRAMWWQrg",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"parishilanrayamajhi@gmail.com\",\n    \"password\" : \"Test@1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/cms/login/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"cms",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "admin",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDItMTYgMTY6NDI6MjEuNTA4ODczIn0.eyJlbWFpbCI6ImdveG9tZXA4OTVAd2VkYm8ubmV0Iiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6ImU0MWE0Zjk0ZmUwMTQxMDNiYWJjMjFkY2E3MmE4ZjllIn0.t-P40cD70y4kva7Axtcgj4eBYlanVtm7iuGRAMWWQrg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"admin@gmail.com\",\n    \"password\" : \"Test@1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/cms/login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"cms",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "manager login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDItMTYgMTY6NDI6MjEuNTA4ODczIn0.eyJlbWFpbCI6ImdveG9tZXA4OTVAd2VkYm8ubmV0Iiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6ImU0MWE0Zjk0ZmUwMTQxMDNiYWJjMjFkY2E3MmE4ZjllIn0.t-P40cD70y4kva7Axtcgj4eBYlanVtm7iuGRAMWWQrg"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"manager@gmail.com\",\n    \"password\" : \"Test@1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{bloom_crypto}}/cms/login/",
+							"host": [
+								"{{bloom_crypto}}"
+							],
+							"path": [
+								"cms",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "customer",
+			"item": [
+				{
+					"name": "contact_us",
+					"item": [
+						{
+							"name": "contact us_post",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjAtMTItMDcgMTI6NDU6NTMuMTQ5MDQ4In0.eyJlbWFpbCI6InBhcmluM0BnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VyX2lkIjoiZDc0MjhmOTY2Y2ZhNDU5ZTlmMjgxNmM2MmI5MTM0YzEifQ.w2KOclntGyueBBOC7YBSmGqaPpQMDuT17rgLVI6aj-8"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\" : \"Parin\",\n    \"email\" : \"parishilan@gmail.com\",\n    \"subject\" : \"Hello Test\",\n    \"message\" : \"This is message contnet\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/contact-us/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"contact-us",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "profile ",
+					"item": [
+						{
+							"name": "change_password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjAtMTEtMjkgMTE6MTQ6MTQuODQ4ODY0In0.eyJlbWFpbCI6InBhcmluM0BnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VyX2lkIjoiZDc0MjhmOTY2Y2ZhNDU5ZTlmMjgxNmM2MmI5MTM0YzEifQ._1rQQlCdSfa7c7G3c27etAaYSCluVg-9GSXxuTjFkq8"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"parin3@gmail.com\",\n\t\"new_password\" : \"parin3@gmail.com\",\n    \"old_password\" : \"parin13@gmail.com\"\n\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/change_password/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"change_password",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "forget_password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjAtMTEtMjkgMTE6MTQ6MTQuODQ4ODY0In0.eyJlbWFpbCI6InBhcmluM0BnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VyX2lkIjoiZDc0MjhmOTY2Y2ZhNDU5ZTlmMjgxNmM2MmI5MTM0YzEifQ._1rQQlCdSfa7c7G3c27etAaYSCluVg-9GSXxuTjFkq8"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"parishilanrayamajhi@gmail.com\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/forget-password-request/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"forget-password-request",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "resend_email",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjAtMTEtMjkgMTE6MTQ6MTQuODQ4ODY0In0.eyJlbWFpbCI6InBhcmluM0BnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VyX2lkIjoiZDc0MjhmOTY2Y2ZhNDU5ZTlmMjgxNmM2MmI5MTM0YzEifQ._1rQQlCdSfa7c7G3c27etAaYSCluVg-9GSXxuTjFkq8"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"parishilanrayamajhi@gmail.com\",\n    \"event_name\": \"account_verify\"\n\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/resend_email/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"resend_email",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "reset password",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjAtMTEtMjkgMTE6MTQ6MTQuODQ4ODY0In0.eyJlbWFpbCI6InBhcmluM0BnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VyX2lkIjoiZDc0MjhmOTY2Y2ZhNDU5ZTlmMjgxNmM2MmI5MTM0YzEifQ._1rQQlCdSfa7c7G3c27etAaYSCluVg-9GSXxuTjFkq8"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"token\" : \"f6e91e76f87049b58573a4ed676fb23a\",\n    \"new_password\" : \"Test@1234\",\n    \"confirm_password\" : \"Test@1234\"\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/reset-password/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"reset-password",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "get_general_data",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjAtMTAtMjUgMTM6MTE6MTguNTI3ODc2In0.eyJlbWFpbCI6InNhcmlrMUBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VyX2lkIjoiZTdkMjNiZDk2NWM3NDZkOGIxMTM1NWNjMzFjNTc4NzUifQ.e57v9Onlx0c5ENcwr2xQl0F5r7J5M6vbA8mMVlcFLlY"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"sarik1@gmail.com\"\n }"
+								},
+								"url": {
+									"raw": "{{base_url}}/get_general_info/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"get_general_info",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "signup/register",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": ""
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"djjss@gmail.com\",\n\t\"password\" : \"janaket@gmail.com\",\n    \"username\" : \"lushiv\",\n    \"referral_token\": \"8a47\"\n}"
+								},
+								"url": {
+									"raw": "localhost:8000/api/signup/",
+									"host": [
+										"localhost"
+									],
+									"port": "8000",
+									"path": [
+										"api",
+										"signup",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "2fa",
+					"item": [
+						{
+							"name": "disable_2fa",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDYtMjcgMTE6NDE6MTQuNzI3OTg4In0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.-1NINTUNEh3wq2FL-KffAqb4b_iHm_h6sBduU0woA3w"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"parishilanrayamajhi@gmail.com\",\n    \"otp\" : 740714\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/disable_2fa/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"disable_2fa",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "enable_2fa",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDYtMjcgMTE6MzE6MDkuMzQ0NDQ2In0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.B0RAG7qeKUx_zFT2smHdgnsSuB-cBcRxU0B5pR7UG1g"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"parishilanrayamajhi@gmail.com\",\n    \"reenable\" : true\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/enable_2fa/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"enable_2fa",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "2fa login",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDYtMjcgMTE6MzE6MDkuMzQ0NDQ2In0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.B0RAG7qeKUx_zFT2smHdgnsSuB-cBcRxU0B5pR7UG1g"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"parishilanrayamajhi@gmail.com\",\n    \"otp\" : 384095\n}"
+								},
+								"url": {
+									"raw": "{{base_url}}/multifactor_login/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"multifactor_login",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify_otp Copy",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDYtMjcgMTE6MzE6MDkuMzQ0NDQ2In0.eyJlbWFpbCI6InBhcmlzaGlsYW5yYXlhbWFqaGlAZ21haWwuY29tIiwicm9sZSI6ImFkbWluIiwidXNlcl9pZCI6IjJmNGU5OGY4NDdkMDQwNWZhMWY1ZDg4MDc5NGY5MGM3In0.B0RAG7qeKUx_zFT2smHdgnsSuB-cBcRxU0B5pR7UG1g"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"parishilanrayamajhi@gmail.com\",\n\t\"otp\" : \"456843\"\n }"
+								},
+								"url": {
+									"raw": "{{base_url}}/verify_otp/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"verify_otp",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "verification",
+					"item": [
+						{
+							"name": "email verify",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjAtMTItMDcgMTI6NDU6NTMuMTQ5MDQ4In0.eyJlbWFpbCI6InBhcmluM0BnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VyX2lkIjoiZDc0MjhmOTY2Y2ZhNDU5ZTlmMjgxNmM2MmI5MTM0YzEifQ.w2KOclntGyueBBOC7YBSmGqaPpQMDuT17rgLVI6aj-8"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n}",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/email-verify?token=462e106051254ebbb2635c3ec4d3c483",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"email-verify"
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "462e106051254ebbb2635c3ec4d3c483"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "token_validation",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjAtMTItMDcgMTI6NDU6NTMuMTQ5MDQ4In0.eyJlbWFpbCI6InBhcmluM0BnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VyX2lkIjoiZDc0MjhmOTY2Y2ZhNDU5ZTlmMjgxNmM2MmI5MTM0YzEifQ.w2KOclntGyueBBOC7YBSmGqaPpQMDuT17rgLVI6aj-8"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \n}",
+									"options": {
+										"raw": {
+											"language": "text"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{base_url}}/token_validation/?token=a7d7029ccc064141b3018af2b4f02b50",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"token_validation",
+										""
+									],
+									"query": [
+										{
+											"key": "token",
+											"value": "a7d7029ccc064141b3018af2b4f02b50"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "verify_otp",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Authorization",
+										"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjAtMTAtMjUgMTM6MTE6MTguNTI3ODc2In0.eyJlbWFpbCI6InNhcmlrMUBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VyX2lkIjoiZTdkMjNiZDk2NWM3NDZkOGIxMTM1NWNjMzFjNTc4NzUifQ.e57v9Onlx0c5ENcwr2xQl0F5r7J5M6vbA8mMVlcFLlY"
+									},
+									{
+										"key": "",
+										"value": "",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n\t\"email\" : \"sarik1@gmail.com\",\n\t\"otp\" : \"535499\"\n }"
+								},
+								"url": {
+									"raw": "{{base_url}}/verify_otp/",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"verify_otp",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "client logout",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjEtMDItMjYgMTk6MDY6NDkuMTE1Mjc4In0.eyJlbWFpbCI6InBhcmluNEBnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VyX2lkIjpudWxsfQ.gGpJerGoJU7FRV2OPbKbCu6LIDgZyP7HFlNGKX_BFds"
+							},
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"test1@gmail.com\"\n }"
+						},
+						"url": {
+							"raw": "{{base_url}}/logout/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiIsInRpbWVzdGFtcCI6IjIwMjAtMTEtMDYgMTc6MDY6MTIuMjM4OTU0In0.eyJlbWFpbCI6InBhcmluM0BnbWFpbC5jb20iLCJyb2xlIjoiY3VzdG9tZXIiLCJ1c2VyX2lkIjoiZDc0MjhmOTY2Y2ZhNDU5ZTlmMjgxNmM2MmI5MTM0YzEifQ.SZlFhvbIQPy9DsSbUuxMqNtRY7-tHu0dq9X4fSCjv8Q",
+								"disabled": true
+							},
+							{
+								"key": "",
+								"value": "",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\" : \"test@grr.la\",\n\t\"password\" : \"test1234\"\n}"
+						},
+						"url": {
+							"raw": "localhost:8000/api/login/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
