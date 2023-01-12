@@ -43,7 +43,6 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'app',
-    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -154,6 +153,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 AWS_ACCESS_KEY_ID = "AKIA6QTIMCYICQOGNNO2"
 AWS_SECRET_ACCESS_KEY = "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"
-AWS_S3_BUCKET = "parin"
+AWS_S3_BUCKET = "test"
 AWS_REGION_S3_BUCKET = "us-east-2"
-
