@@ -1,8 +1,10 @@
-# Development
+# Django Backend REST API Boilarplate With MYSQL:-
+## Development
 ## Setup 
 1. [Mysql](https://www.mysql.com//)
 2. [Python](https://www.python.org/downloads/release/python-365/)
 2. [Redis](https://redis.io/)
+
 
 ## Get Start Installation:-
 Following are instructions on setting up your development environment.
